@@ -339,42 +339,42 @@
             <div class="staff-grid">
                 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=AZ'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=GS'">
                     <h3>Arseniy_zabanen</h3>
-                    <div class="role">Головний Суддя</div>
+                    <div class="role">Головний Суддя (ГС)</div>
                     <div class="contacts">TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=MK'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Zast'">
                     <h3>mummu228kuku</h3>
-                    <div class="role">Заступник Головного Судді</div>
+                    <div class="role">Заступник</div>
                     <div class="contacts">TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=SV'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Judge'">
                     <h3>svervanchick</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=H'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Judge'">
                     <h3>Huhaidjopy</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Z'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Judge'">
                     <h3>Mr_Zver3000</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox Role</div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=ZZ'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Lawyer'">
                     <h3>Zaj_zuda3</h3>
                     <div class="role">Адвокат</div>
                     <div class="contacts">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
