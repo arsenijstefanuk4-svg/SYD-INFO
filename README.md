@@ -26,7 +26,6 @@
             --text-muted: #94a3b8;
             --success-color: #22c55e;
             --warning-color: #f59e0b;
-            --danger-color: #ef4444;
             --transition-speed: 0.3s;
         }
 
@@ -71,6 +70,37 @@
             margin: 0 auto;
         }
 
+        /* Унікальний та величезний блок СУД ІНФО */
+        .hero-info-box {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            border: 2px solid var(--accent-blue);
+            border-radius: 20px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 0 35px rgba(14, 165, 233, 0.3);
+        }
+
+        .hero-info-box h2 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+        }
+
+        .hero-info-box p {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            max-width: 900px;
+            margin: 0 auto 25px auto;
+            line-height: 1.8;
+        }
+
         .content-section {
             background-color: var(--bg-card);
             border: 1px solid var(--border-primary);
@@ -78,12 +108,6 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
-        }
-
-        .content-section:hover {
-            border-color: rgba(14, 165, 233, 0.4);
-            box-shadow: 0 15px 40px rgba(14, 165, 233, 0.1);
         }
 
         .section-title {
@@ -99,30 +123,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 20px;
-        }
-
-        .news-banner {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), #0b101d);
-            border: 1px solid var(--accent-blue);
-            border-radius: 14px;
-            padding: 20px 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .news-banner h3 {
-            color: var(--accent-blue);
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .news-banner p {
-            color: #d1d5db;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
         }
 
         .dropdown-element {
@@ -144,7 +144,6 @@
             justify-content: space-between;
             align-items: center;
             transition: all var(--transition-speed);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .dropdown-toggle-btn:hover {
@@ -246,7 +245,6 @@
             color: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.2s;
         }
 
         .staff-contacts-info a:hover {
@@ -312,7 +310,6 @@
         .status-up { color: var(--success-color); font-weight: bold; }
         .status-stable { color: var(--accent-blue); font-weight: bold; }
 
-        /* Покращений блок івенту відкритих дверей із детальним описом та користю */
         .event-detailed-card {
             background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(15, 23, 42, 0.95));
             border: 1px solid var(--accent-blue);
@@ -392,7 +389,6 @@
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-top: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
     </style>
 </head>
@@ -405,11 +401,9 @@
             <p>Централізований державний реєстр судових проваджень, регламентів, звітності та керівного складу колегії</p>
         </header>
 
-        <div class="news-banner">
-            <h3>⚡ Уже в найближчий час стане доступно оновлення Суду Ukraine RP!</h3>
-            <p>За сьогодні була проведена невелика доработка системи: покращено роботу суду, змінено деякі внутрішні функції та внесено кілька корегувань для більш зручного ігрового процесу.</p>
-            <p>Це ще не все — попереду на вас чекають нові можливості та інші цікаві зміни.</p>
-            <p>🔥 <strong>Слідкуйте за новинами, зовсім скоро покажемо все повністю.</strong></p>
+        <div class="hero-info-box">
+            <h2>⚖️ СУД ІНФО UKRAINE RP ⚖️</h2>
+            <p>Ваш надійний путівник у світі державних законів, судових регламентів та захисту прав громадян. Тут зібрана вичерпна інформація про правила поведінки під час засідань, юридичні стандарти та роботу колегії суддів.</p>
         </div>
 
         <section class="content-section">
@@ -421,9 +415,28 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">⚖️ Нормативно-правова база та Регламент</h2>
-            <p class="section-description">Ознайомтеся з правилами судочинства та основними процесуальними процесами:</p>
+            <h2 class="section-title">⚖️ Нормативно-правова база та Регламент поведінки</h2>
+            <p class="section-description">Детальні інструкції щодо етики та законів у залі судових засідань:</p>
             
+            <div class="dropdown-element">
+                <button class="dropdown-toggle-btn">
+                    <span>👔 Етика та правила поведінки в залі суду (Детально)</span> 
+                    <span>▼</span>
+                </button>
+                <div class="dropdown-panel">
+                    <p><strong>Головні правила для кожного учасника:</strong></p>
+                    <ul>
+                        <li><strong>Звернення до судді:</strong> Виключно офіційно та з повагою — <em>«Ваша Честь»</em> або <em>«Шановний Судде»</em>.</li>
+                        <li><strong>Дисципліна:</strong> Заборонено перебивати виступи інших сторін, викрикувати, проявляти емоції чи використовувати нецензурну лексику.</li>
+                        <li><strong>Вставання:</strong> Усі присутні зобов'язані вставати при вході судді до залу засідань та під час оголошення вироку.</li>
+                        <li><strong>Мобільні пристрої:</strong> Телефони мають бути переведені в беззвучний режим. Зйомка або запис дозволені лише за попереднім дозволом головуючого.</li>
+                    </ul>
+                    <div class="notice-box">
+                        <strong>⚠️ Наслідки порушень:</strong> За неповагу до суду або порушення регламенту накладається штраф або виводиться попередження з подальшим видаленням із зали.
+                    </div>
+                </div>
+            </div>
+
             <div class="dropdown-element">
                 <button class="dropdown-toggle-btn">
                     <span>🛡️ Що таке обшук в RP і чому він законний?</span> 
@@ -432,25 +445,6 @@
                 <div class="dropdown-panel">
                     <p><strong>Законність процедури:</strong> Обшук є стандартною процесуальною дією уповноважених правоохоронних органів. Якщо вона виконується згідно з правилами сервера (з використанням команд <code>/me</code>, <code>/do</code> та за наявності вагомої підстави чи санкції), вона є повністю законною.</p>
                     <p><strong>Доказова база:</strong> Будь-які заборонені предмети, виявлені під час правильного RP-обшуку, вважаються легітимними доказами у судовому засіданні.</p>
-                    <div class="notice-box">
-                        <strong>💡 Зверніть увагу:</strong> Порушення інструкцій проведення з боку силових структур робить результати обшуку недійсними в суді.
-                    </div>
-                </div>
-            </div>
-
-            <div class="dropdown-element">
-                <button class="dropdown-toggle-btn">
-                    <span>👔 Етика та правила поведінки в залі суду</span> 
-                    <span>▼</span>
-                </button>
-                <div class="dropdown-panel">
-                    <p><strong>Загальні вимоги до учасників:</strong></p>
-                    <ul>
-                        <li>Дотримуйтеся абсолютної тиші та порядку під час проведення судового засідання.</li>
-                        <li>Звертайтеся до судді виключно за офіційним регламентом («Ваша Честь»).</li>
-                        <li>Категорично заборонено переривати виступи сторін, сперечатися без дозволу або викрикувати.</li>
-                    </ul>
-                    <p>За порушення регламенту суду порушник може бути притягнутий до відповідальності за неповагу.</p>
                 </div>
             </div>
 
@@ -470,7 +464,6 @@
             <p class="section-description">Офіційний кадровий склад керівництва, суддівської колегії та представників захисту:</p>
             
             <div class="staff-grid-container">
-                
                 <div class="staff-profile-card">
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
@@ -506,13 +499,11 @@
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
                 </div>
-
             </div>
         </section>
 
         <section class="content-section">
             <h2 class="section-title">📊 Детальна архівна таблиця звітів суду</h2>
-            
             <p class="section-description">У звітах нижче детально розписані всі показники продуктивності судової системи, кількість успішно опрацьованих позовів, а також рівень зниження корупційних правопорушень на сервері. Розширені звіти допомагають адміністрації та гравцям чітко бачити прозорість роботи державних органів.</p>
 
             <div class="table-box-wrapper">
