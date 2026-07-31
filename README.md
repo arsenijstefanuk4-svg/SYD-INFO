@@ -6,16 +6,16 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-gradient: radial-gradient(circle at top center, #1a233a 0%, #0a0e17 70%);
-            --card-bg: rgba(17, 24, 39, 0.75);
-            --card-hover: rgba(31, 41, 55, 0.85);
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-color: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.35);
-            --border-color: rgba(75, 85, 99, 0.4);
-            --green: #4ade80;
-            --red: #f87171;
+            --bg-deep: #060913;
+            --bg-card: rgba(13, 19, 33, 0.85);
+            --bg-card-hover: rgba(22, 32, 54, 0.95);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #0ea5e9;
+            --accent-glow: rgba(14, 165, 233, 0.4);
+            --border: rgba(56, 189, 248, 0.2);
+            --success: #22c55e;
+            --warning: #f59e0b;
         }
 
         *, *::before, *::after {
@@ -24,9 +24,9 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: var(--bg-gradient);
+            background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-deep) 60%);
             background-attachment: fixed;
-            color: var(--text-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -35,29 +35,27 @@
         }
 
         header {
-            background: linear-gradient(135deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 27, 75, 0.9));
             padding: 3rem 1rem;
             text-align: center;
-            border-bottom: 2px solid var(--accent-color);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            border-bottom: 2px solid var(--accent);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
         }
 
         h1 {
             margin: 0;
-            color: var(--accent-color);
-            font-size: 2.4rem;
+            color: var(--accent);
+            font-size: 2.3rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 25px var(--accent-glow);
-            word-break: break-word;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            margin-top: 0.6rem;
-            word-break: break-word;
+            font-size: 1rem;
+            margin-top: 0.5rem;
         }
 
         .container {
@@ -68,53 +66,53 @@
         }
 
         .section {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            backdrop-filter: blur(12px);
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(16px);
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
         }
 
         .section:hover {
-            border-color: rgba(56, 189, 248, 0.3);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 15px 45px rgba(14, 165, 233, 0.15);
         }
 
         h2 {
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 0.6rem;
             margin-top: 0;
-            color: var(--accent-color);
-            font-size: 1.6rem;
-            word-break: break-word;
+            color: var(--accent);
+            font-size: 1.5rem;
             display: inline-block;
         }
 
-        /* Випадаючі списки (акордеони) */
+        /* Акордеони (Випадаючі списки) */
         .dropdown-btn {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.9));
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
             color: white;
             cursor: pointer;
             padding: 1.1rem 1.4rem;
             width: 100%;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border);
             text-align: left;
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 600;
             border-radius: 12px;
-            margin-top: 1.2rem;
+            margin-top: 1rem;
             transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .dropdown-btn:hover {
-            background: linear-gradient(135deg, rgba(51, 65, 85, 0.9), rgba(71, 85, 105, 0.95));
-            border-color: var(--accent-color);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.7), rgba(30, 41, 59, 0.9));
+            border-color: var(--accent);
             transform: translateY(-2px);
         }
 
@@ -122,20 +120,20 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.3s ease;
-            background-color: rgba(15, 23, 42, 0.85);
+            background-color: rgba(10, 14, 23, 0.9);
             border-radius: 0 0 12px 12px;
             padding: 0 1.4rem;
         }
 
         .dropdown-content.show {
-            max-height: 1200px;
+            max-height: 1000px;
             padding: 1.4rem;
-            margin-top: 5px;
-            border: 1px solid var(--border-color);
+            margin-top: 4px;
+            border: 1px solid var(--border);
             border-top: none;
         }
 
-        /* Картки працівників */
+        /* Картки команди */
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -144,44 +142,43 @@
         }
 
         .staff-card {
-            background: var(--card-hover);
-            border: 1px solid var(--border-color);
+            background: var(--bg-card-hover);
+            border: 1px solid var(--border);
             padding: 1.5rem 1rem;
             border-radius: 16px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
         .staff-card:hover {
             transform: translateY(-6px);
-            border-color: var(--accent-color);
-            box-shadow: 0 8px 25px var(--accent-glow);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px var(--accent-glow);
         }
 
         .avatar {
-            width: 90px;
-            height: 90px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-color);
+            border: 3px solid var(--accent);
             margin-bottom: 1rem;
             background-color: #0b0f19;
-            box-shadow: 0 0 15px var(--accent-glow);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .staff-card h3 {
             margin: 0.4rem 0;
             font-size: 1.15rem;
             color: #ffffff;
-            word-break: break-word;
         }
 
         .role {
-            color: var(--accent-color);
-            font-size: 0.8rem;
+            color: var(--accent);
+            font-size: 0.75rem;
             margin-bottom: 0.8rem;
-            font-weight: bold;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
         }
@@ -193,7 +190,7 @@
         }
 
         .contacts a {
-            color: var(--accent-color);
+            color: var(--accent);
             text-decoration: none;
             font-weight: 600;
         }
@@ -208,21 +205,21 @@
             width: 100%;
             height: 320px;
             margin-top: 1.5rem;
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(10, 14, 23, 0.75);
             padding: 1rem;
             border-radius: 16px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--border);
         }
 
-        /* Таблиці */
+        /* Таблиця */
         .table-container {
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
             margin-top: 1.5rem;
             border-radius: 14px;
-            border: 1px solid var(--border-color);
-            background-color: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border);
+            background-color: rgba(10, 14, 23, 0.85);
         }
 
         table {
@@ -235,13 +232,13 @@
 
         th, td {
             padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border);
             color: #ffffff;
         }
 
         th {
-            background-color: rgba(30, 41, 59, 0.9);
-            color: var(--accent-color);
+            background-color: rgba(30, 41, 59, 0.95);
+            color: var(--accent);
             font-weight: 600;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -253,36 +250,31 @@
         }
 
         tr:hover {
-            background-color: rgba(56, 189, 248, 0.07);
+            background-color: rgba(14, 165, 233, 0.08);
         }
 
-        .badge-up { color: var(--green); font-weight: bold; }
-        .badge-down { color: var(--red); font-weight: bold; }
-        .badge-stable { color: var(--accent-color); font-weight: bold; }
+        .badge-up { color: var(--success); font-weight: bold; }
+        .badge-stable { color: var(--accent); font-weight: bold; }
 
         ul { padding-left: 20px; color: var(--text-muted); }
-        li { margin-bottom: 0.6rem; color: #ffffff; word-break: break-word; }
-
-        p { word-break: break-word; }
+        li { margin-bottom: 0.6rem; color: #ffffff; }
 
         .info-box {
-            background: rgba(56, 189, 248, 0.08);
-            border-left: 4px solid var(--accent-color);
+            background: rgba(14, 165, 233, 0.08);
+            border-left: 4px solid var(--accent);
             padding: 1rem;
             margin: 1.2rem 0;
             border-radius: 0 10px 10px 0;
             color: #ffffff;
-            word-break: break-word;
         }
 
         footer {
             text-align: center;
             padding: 2rem 1rem;
-            background-color: rgba(10, 14, 23, 0.95);
-            border-top: 1px solid var(--border-color);
+            background-color: rgba(4, 6, 12, 0.95);
+            border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.9rem;
-            word-break: break-word;
         }
     </style>
 </head>
@@ -355,42 +347,42 @@
             <div class="staff-grid">
                 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=GS'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150'">
                     <h3>Arseniy_zabanen</h3>
                     <div class="role">Головний Суддя (ГС)</div>
                     <div class="contacts">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Zast'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150'">
                     <h3>mummu228kuku</h3>
                     <div class="role">Заступник</div>
                     <div class="contacts">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Judge'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150'">
                     <h3>svervanchick</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Judge'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150'">
                     <h3>Huhaidjopy</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Zver'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150'">
                     <h3>Mr_Zver3000</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Lawyer'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150'">
                     <h3>Zaj_zuda3</h3>
                     <div class="role">Адвокат</div>
                     <div class="contacts">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
@@ -471,12 +463,13 @@
                 datasets: [{
                     label: 'Активність суду',
                     data: [359, 657, 329, 215, 310, 570],
-                    borderColor: '#38bdf8',
-                    backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                    borderColor: '#0ea5e9',
+                    backgroundColor: 'rgba(14, 165, 233, 0.15)',
                     borderWidth: 3,
                     fill: true,
                     tension: 0.35,
-                    pointRadius: 5
+                    pointRadius: 5,
+                    pointBackgroundColor: '#0ea5e9'
                 }]
             },
             options: {
@@ -487,12 +480,12 @@
                 },
                 scales: {
                     x: {
-                        grid: { color: 'rgba(55, 65, 81, 0.4)' },
-                        ticks: { color: '#9ca3af' }
+                        grid: { color: 'rgba(56, 189, 248, 0.1)' },
+                        ticks: { color: '#94a3b8' }
                     },
                     y: {
-                        grid: { color: 'rgba(55, 65, 81, 0.4)' },
-                        ticks: { color: '#9ca3af' }
+                        grid: { color: 'rgba(56, 189, 248, 0.1)' },
+                        ticks: { color: '#94a3b8' }
                     }
                 }
             }
