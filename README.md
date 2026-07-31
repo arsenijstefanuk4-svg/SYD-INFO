@@ -6,131 +6,130 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --card-hover: #1f2937;
-            --text-color: #ffffff;
+            --bg-gradient: radial-gradient(circle at top center, #1a233a 0%, #0a0e17 70%);
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --card-hover: rgba(31, 41, 55, 0.85);
+            --text-color: #f3f4f6;
             --text-muted: #9ca3af;
             --accent-color: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
-            --border-color: #374151;
+            --accent-glow: rgba(56, 189, 248, 0.35);
+            --border-color: rgba(75, 85, 99, 0.4);
             --green: #4ade80;
             --red: #f87171;
         }
 
-        /* Захист від горизонтального виходу за межі екрана для мобільних */
         *, *::before, *::after {
             box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
             color: var(--text-color);
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            min-height: 100vh;
             overflow-x: hidden;
-            width: 100%;
         }
 
         header {
-            background: linear-gradient(135deg, #1e1b4b, #0f172a, #0b0f19);
-            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.95));
+            padding: 3rem 1rem;
             text-align: center;
-            border-bottom: 3px solid var(--accent-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
         }
 
         h1 {
             margin: 0;
             color: var(--accent-color);
-            font-size: 2rem;
+            font-size: 2.4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 0 20px var(--accent-glow);
+            text-shadow: 0 0 25px var(--accent-glow);
             word-break: break-word;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
+            font-size: 1.05rem;
+            margin-top: 0.6rem;
             word-break: break-word;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1rem;
+            padding: 2rem 1rem;
             width: 100%;
         }
 
         .section {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-            width: 100%;
-            overflow: hidden;
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
         h2 {
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.6rem;
             margin-top: 0;
             color: var(--accent-color);
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             word-break: break-word;
-        }
-
-        h3 {
-            color: #ffffff;
-            margin-top: 1.2rem;
-            word-break: break-word;
+            display: inline-block;
         }
 
         /* Випадаючі списки (акордеони) */
         .dropdown-btn {
-            background: linear-gradient(135deg, #1e293b, #334155);
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(51, 65, 85, 0.9));
             color: white;
             cursor: pointer;
-            padding: 1rem;
+            padding: 1.1rem 1.4rem;
             width: 100%;
             border: 1px solid var(--border-color);
             text-align: left;
-            font-size: 0.95rem;
-            font-weight: bold;
-            border-radius: 10px;
-            margin-top: 1rem;
-            transition: all 0.3s;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 12px;
+            margin-top: 1.2rem;
+            transition: all 0.3s ease;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            word-break: break-word;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .dropdown-btn:hover {
-            background: linear-gradient(135deg, #334155, #475569);
+            background: linear-gradient(135deg, rgba(51, 65, 85, 0.9), rgba(71, 85, 105, 0.95));
             border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
         .dropdown-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.4s ease-out, padding 0.3s ease;
-            background-color: #0f172a;
-            border-radius: 0 0 10px 10px;
-            padding: 0 1rem;
-            word-break: break-word;
+            background-color: rgba(15, 23, 42, 0.85);
+            border-radius: 0 0 12px 12px;
+            padding: 0 1.4rem;
         }
 
         .dropdown-content.show {
             max-height: 1200px;
-            padding: 1rem;
+            padding: 1.4rem;
             margin-top: 5px;
             border: 1px solid var(--border-color);
             border-top: none;
@@ -139,58 +138,56 @@
         /* Картки працівників */
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1.2rem;
-            width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
         }
 
         .staff-card {
-            background-color: var(--card-hover);
+            background: var(--card-hover);
             border: 1px solid var(--border-color);
-            padding: 1.2rem 0.8rem;
-            border-radius: 12px;
+            padding: 1.5rem 1rem;
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.3s;
-            overflow: hidden;
-            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         .staff-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             border-color: var(--accent-color);
-            box-shadow: 0 6px 20px var(--accent-glow);
+            box-shadow: 0 8px 25px var(--accent-glow);
         }
 
         .avatar {
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--accent-color);
-            margin-bottom: 0.8rem;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 1rem;
             background-color: #0b0f19;
+            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         .staff-card h3 {
-            margin: 0.3rem 0;
-            font-size: 1.05rem;
+            margin: 0.4rem 0;
+            font-size: 1.15rem;
             color: #ffffff;
             word-break: break-word;
         }
 
         .role {
             color: var(--accent-color);
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             margin-bottom: 0.8rem;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            word-break: break-word;
+            letter-spacing: 1.5px;
         }
 
         .contacts {
-            font-size: 0.82rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             word-break: break-all;
         }
@@ -209,11 +206,11 @@
         .chart-container {
             position: relative;
             width: 100%;
-            height: 280px;
-            margin-top: 1.2rem;
-            background: #0f172a;
-            padding: 0.5rem;
-            border-radius: 12px;
+            height: 320px;
+            margin-top: 1.5rem;
+            background: rgba(15, 23, 42, 0.7);
+            padding: 1rem;
+            border-radius: 16px;
             border: 1px solid var(--border-color);
         }
 
@@ -222,69 +219,69 @@
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            margin-top: 1.2rem;
-            border-radius: 10px;
+            margin-top: 1.5rem;
+            border-radius: 14px;
             border: 1px solid var(--border-color);
-            background-color: #0f172a;
+            background-color: rgba(15, 23, 42, 0.8);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             white-space: nowrap;
         }
 
         th, td {
-            padding: 0.75rem;
+            padding: 1rem;
             border-bottom: 1px solid var(--border-color);
             color: #ffffff;
         }
 
         th {
-            background-color: #1e293b;
+            background-color: rgba(30, 41, 59, 0.9);
             color: var(--accent-color);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
         }
 
         tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
+            background-color: rgba(255, 255, 255, 0.015);
         }
 
         tr:hover {
-            background-color: rgba(56, 189, 248, 0.08);
+            background-color: rgba(56, 189, 248, 0.07);
         }
 
         .badge-up { color: var(--green); font-weight: bold; }
         .badge-down { color: var(--red); font-weight: bold; }
         .badge-stable { color: var(--accent-color); font-weight: bold; }
 
-        ul { padding-left: 18px; color: var(--text-muted); }
-        li { margin-bottom: 0.5rem; color: #ffffff; word-break: break-word; }
+        ul { padding-left: 20px; color: var(--text-muted); }
+        li { margin-bottom: 0.6rem; color: #ffffff; word-break: break-word; }
 
         p { word-break: break-word; }
 
         .info-box {
             background: rgba(56, 189, 248, 0.08);
             border-left: 4px solid var(--accent-color);
-            padding: 0.8rem;
-            margin: 1rem 0;
-            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin: 1.2rem 0;
+            border-radius: 0 10px 10px 0;
             color: #ffffff;
             word-break: break-word;
         }
 
         footer {
             text-align: center;
-            padding: 1.5rem 1rem;
-            background-color: #0b0f19;
+            padding: 2rem 1rem;
+            background-color: rgba(10, 14, 23, 0.95);
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             word-break: break-word;
         }
     </style>
@@ -305,7 +302,7 @@
             <div class="chart-container">
                 <canvas id="courtStockChart"></canvas>
             </div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">* Значення показують загальну кількість засідань та звернень.</p>
+            <p style="font-size: 0.82rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">* Значення показують загальну кількість засідань та звернень.</p>
         </div>
 
         <div class="section">
@@ -325,15 +322,6 @@
             </div>
 
             <button class="dropdown-btn">
-                <span>🚫 Пункт 1: Заборона образ (Оск) та неадекватності</span> 
-                <span>▼</span>
-            </button>
-            <div class="dropdown-content">
-                <p><strong>Суть правила (Пункт 1):</strong> Будь-які прямі чи завуальовані образи гравців, адміністрації або працівників суду, а також токсична поведінка та провокації суворо заборонені.</p>
-                <p><strong>Наслідки порушення:</strong> За порушення пункту 1 передбачено покарання у вигляді штрафу, муту або адміністративного арешту.</p>
-            </div>
-
-            <button class="dropdown-btn">
                 <span>👔 Як треба і як не треба поводити себе в суді</span> 
                 <span>▼</span>
             </button>
@@ -346,7 +334,6 @@
                 <p><strong>Як категорично не можна:</strong></p>
                 <ul>
                     <li>Перебивати суддю або інших учасників процесу.</li>
-                    <li>Використовувати нецензурну лексику (порушувати пункт 1).</li>
                     <li>Вчиняти провокації в офіційному чаті бота <code>@CourtUR_bot</code>.</li>
                 </ul>
             </div>
@@ -368,42 +355,42 @@
             <div class="staff-grid">
                 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=GS'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=GS'">
                     <h3>Arseniy_zabanen</h3>
                     <div class="role">Головний Суддя (ГС)</div>
                     <div class="contacts">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Zast'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Zast'">
                     <h3>mummu228kuku</h3>
                     <div class="role">Заступник</div>
                     <div class="contacts">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Judge'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Judge'">
                     <h3>svervanchick</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Judge'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Judge'">
                     <h3>Huhaidjopy</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Zver'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Zver'">
                     <h3>Mr_Zver3000</h3>
                     <div class="role">Суддя</div>
                     <div class="contacts">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Lawyer'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-66666666666666666666666666666666-Png/150/150/AvatarHeadshot/noFilter" alt="Zaj_zuda3" class="avatar" onerror="this.src='https://via.placeholder.com/90/111827/38bdf8?text=Lawyer'">
                     <h3>Zaj_zuda3</h3>
                     <div class="role">Адвокат</div>
                     <div class="contacts">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
@@ -500,11 +487,11 @@
                 },
                 scales: {
                     x: {
-                        grid: { color: 'rgba(55, 65, 81, 0.5)' },
+                        grid: { color: 'rgba(55, 65, 81, 0.4)' },
                         ticks: { color: '#9ca3af' }
                     },
                     y: {
-                        grid: { color: 'rgba(55, 65, 81, 0.5)' },
+                        grid: { color: 'rgba(55, 65, 81, 0.4)' },
                         ticks: { color: '#9ca3af' }
                     }
                 }
