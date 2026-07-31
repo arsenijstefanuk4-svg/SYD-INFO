@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Судова Система</title>
+    <title>Судова Система | Офіційний Сайт</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -25,7 +25,7 @@
 
         header {
             background: linear-gradient(135deg, #1e293b, #0f172a);
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
             border-bottom: 2px solid var(--border-color);
         }
@@ -33,6 +33,7 @@
         h1 {
             margin: 0 0 0.5rem 0;
             color: var(--accent-color);
+            font-size: 2.2rem;
         }
 
         .container {
@@ -57,7 +58,7 @@
             color: var(--accent-color);
         }
 
-        /* Випадаючі списки (акордеон) */
+        /* Випадаюча кнопка (Акордеон) */
         .dropdown-btn {
             background-color: #334155;
             color: white;
@@ -85,18 +86,18 @@
             padding: 0 1rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.4s ease-out;
             background-color: rgba(15, 23, 42, 0.5);
             border-radius: 0 0 8px 8px;
         }
 
         .dropdown-content.show {
-            max-height: 300px;
+            max-height: 500px;
             padding: 1rem;
             margin-top: 5px;
         }
 
-        /* Список працівників */
+        /* Сітка працівників суду */
         .staff-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -113,7 +114,7 @@
         }
 
         .staff-card h3 {
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.3rem 0;
             color: var(--text-color);
         }
 
@@ -138,7 +139,7 @@
             text-decoration: underline;
         }
 
-        /* Таблиця подій */
+        /* Таблиця івентів */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -173,9 +174,9 @@
             font-size: 0.9rem;
         }
 
-        /* Адаптивність для телефонів */
+        /* Адаптивність під мобільні пристрої */
         @media (max-width: 600px) {
-            h1 { font-size: 1.5rem; }
+            h1 { font-size: 1.6rem; }
             .container { padding: 1rem 0.5rem; }
             .section { padding: 1rem; }
         }
@@ -184,31 +185,31 @@
 <body>
 
     <header>
-        <h1>Офіційний Сайт Суду</h1>
-        <p>Справедливість, порядок та законність</p>
+        <h1>🏛️ Офіційна Судова Система</h1>
+        <p>Справедливість, порядок та законність у кожному засіданні</p>
     </header>
 
     <div class="container">
 
         <div class="section">
-            <h2>Про Суд</h2>
-            <p>Ласкаво просимо на офіційну сторінку судової системи! Тут ви можете ознайомитися з керівництвом, правилами поведінки на засіданнях та розкладом відкритих дверей.</p>
+            <h2>Про Суд та Правила</h2>
+            <p>Ласкаво просимо на офіційний портал судової системи. Тут ви можете дізнатися все про роботу наших суддів, ознайомитися з розкладом заходів та правилами поведінки.</p>
             
-            <button class="dropdown-btn"><span>⚖️ Основна інформація та правила</span> <span>▼</span></button>
+            <button class="dropdown-btn"><span>⚖️ Натисніть, щоб відкрити інформацію про суд і правила поведінки</span> <span>▼</span></button>
             <div class="dropdown-content">
-                <p><strong>Головні завдання суду:</strong> Розгляд справ, вирішення конфліктів та захист прав громадян.</p>
+                <p><strong>Хто ми:</strong> Наш Telegram-канал створений Головним Суддею та його Заступником для координації та інформування гравців.</p>
                 <p><strong>Як себе поводити в суді:</strong></p>
                 <ul>
-                    <li>Дотримуватися повної тиші та порядку.</li>
-                    <li>Вставати під час появи судді.</li>
-                    <li>Звертатися до судді виключно "Ваша Честь".</li>
-                    <li>Заборонено перебивати учасників процесу та використовувати нецензурну лексику.</li>
+                    <li>Ставтеся до всіх із повагою, дотримуйтесь порядку та поводьтеся адекватно.</li>
+                    <li>Дотримуйтесь повної тиші, не перебивайте учасників судового процесу.</li>
+                    <li>Вставайте під час появи судді та звертайтеся до нього належним чином.</li>
+                    <li>Використання нецензурної лексики чи провокації суворо заборонені.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2>Працівники суду</h2>
+            <h2>Колектив суду</h2>
             <div class="staff-grid">
                 
                 <div class="staff-card">
@@ -249,43 +250,40 @@
                 <div class="staff-card">
                     <h3>Zaj_zuda3</h3>
                     <div class="role">Адвокат</div>
-                    <div class="contacts">TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
+                    <div class="contacts">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
                 </div>
 
             </div>
         </div>
 
         <div class="section">
-            <h2>Івент: День відкритих дверей</h2>
-            <p>Запрошуємо всіх охочих відвідати наш суд, подивитися як проходять засідання та задати свої питання керівництву!</p>
+            <h2>🏛️ День відкритих дверей у суді!</h2>
+            <p>Наш суд відкриває свої двері для всіх охочих! Це чудовий шанс познайомитися з професією, особливо якщо в майбутньому ви плануєте подаватися на відкритий набір на посаду судді або в охорону.</p>
+            <p><strong>⏰ Коли:</strong> З 10:00 ранку до 22:00 вечора протягом 3 днів.</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th>День тижня</th>
-                        <th>Дата</th>
-                        <th>Час (МСК/Київ)</th>
-                        <th>Опис події</th>
+                        <th>День івенту</th>
+                        <th>Час</th>
+                        <th>Що буде на заході</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>П'ятниця</td>
-                        <td>Вибрана дата 1</td>
-                        <td>18:00</td>
-                        <td>Екскурсія залою суду та знайомство з суддями</td>
+                        <td><strong>День 1</strong> (П'ятниця)</td>
+                        <td>10:00 – 22:00</td>
+                        <td>Екскурсія судом, знайомство з роботою суддів зсередини.</td>
                     </tr>
                     <tr>
-                        <td>Субота</td>
-                        <td>Вибрана дата 2</td>
-                        <td>16:00</td>
-                        <td>Симуляція показового судового засідання</td>
+                        <td><strong>День 2</strong> (Субота)</td>
+                        <td>10:00 – 22:00</td>
+                        <td>Детальні пояснення судових процесів та відповіді на запитання.</td>
                     </tr>
                     <tr>
-                        <td>Неділя</td>
-                        <td>Вибрана дата 3</td>
-                        <td>15:00</td>
-                        <td>Питання та відповіді від Головного Судді</td>
+                        <td><strong>День 3</strong> (Неділя)</td>
+                        <td>10:00 – 22:00</td>
+                        <td>Фінальні відкриті консультації для майбутніх кандидатів на посади.</td>
                     </tr>
                 </tbody>
             </table>
@@ -298,16 +296,17 @@
     </footer>
 
     <script>
-        // Скрипт для випадаючого списку
+        // Скрипт для розгортання інформації по кліку на кнопку
         const dropdownBtn = document.querySelector('.dropdown-btn');
         const dropdownContent = document.querySelector('.dropdown-content');
 
         dropdownBtn.addEventListener('click', function() {
             dropdownContent.classList.toggle('show');
+            const spanArrow = this.querySelector('span:last-child');
             if (dropdownContent.classList.contains('show')) {
-                this.querySelector('span:last-child').textContent = '▲';
+                spanArrow.textContent = '▲';
             } else {
-                this.querySelector('span:last-child').textContent = '▼';
+                spanArrow.textContent = '▼';
             }
         });
     </script>
