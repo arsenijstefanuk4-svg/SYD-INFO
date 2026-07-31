@@ -101,7 +101,6 @@
             margin-bottom: 20px;
         }
 
-        /* Новини оновлення */
         .news-banner {
             background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), #0b101d);
             border: 1px solid var(--accent-blue);
@@ -165,7 +164,7 @@
         }
 
         .dropdown-panel.expanded {
-            max-height: 1000px;
+            max-height: 1200px;
             padding: 20px;
             margin-top: 4px;
             border-color: var(--border-primary);
@@ -216,17 +215,6 @@
             transform: translateY(-6px);
             border-color: var(--accent-blue);
             box-shadow: 0 10px 30px var(--accent-glow);
-        }
-
-        .staff-avatar-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-blue);
-            margin-bottom: 15px;
-            background-color: var(--bg-primary);
-            box-shadow: 0 0 15px var(--accent-glow);
         }
 
         .staff-profile-card h3 {
@@ -294,7 +282,6 @@
             white-space: nowrap;
         }
 
-        /* Виправлено контраст таблиці: темно-синій фон та яскравий текст для ПК */
         .analytics-table th, .analytics-table td {
             padding: 14px 18px;
             border-bottom: 1px solid var(--border-primary);
@@ -325,47 +312,75 @@
         .status-up { color: var(--success-color); font-weight: bold; }
         .status-stable { color: var(--accent-blue); font-weight: bold; }
 
-        /* Івент відкритих дверей */
-        .event-card {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(15, 23, 42, 0.9));
+        /* Покращений блок івенту відкритих дверей із детальним описом та користю */
+        .event-detailed-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(15, 23, 42, 0.95));
             border: 1px solid var(--accent-blue);
             border-radius: 14px;
-            padding: 20px;
+            padding: 25px;
             margin-top: 25px;
+            box-shadow: 0 0 25px var(--accent-glow);
+        }
+
+        .event-detailed-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
-            box-shadow: 0 0 20px var(--accent-glow);
-        }
-
-        .event-info h3 {
-            color: var(--accent-blue);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .event-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin: 0;
-        }
-
-        .event-dates {
-            display: flex;
             gap: 10px;
         }
 
-        .date-badge {
+        .event-detailed-card p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+
+        .event-benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .event-benefits-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .event-benefits-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        .event-schedule-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            border-top: 1px solid var(--border-primary);
+            padding-top: 15px;
+        }
+
+        .schedule-badge {
             background: #151d30;
             border: 1px solid var(--accent-blue);
             color: #ffffff;
-            padding: 8px 14px;
-            border-radius: 8px;
+            padding: 10px 18px;
+            border-radius: 10px;
             font-weight: bold;
             font-size: 1rem;
             box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .portal-footer {
@@ -457,42 +472,36 @@
             <div class="staff-grid-container">
                 
                 <div class="staff-profile-card">
-                    <img src="image_f9099c.png" alt="Arseniy_zabanen" class="staff-avatar-img">
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
                     <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="image_f90c86.png" alt="mummu228kuku" class="staff-avatar-img">
                     <h3>mummu228kuku</h3>
                     <div class="staff-role-badge">Заступник</div>
                     <div class="staff-contacts-info">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="image_f9021a.png" alt="svervanchick" class="staff-avatar-img">
                     <h3>svervanchick</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="image_f8fdc4.png" alt="Huhaidjopy" class="staff-avatar-img">
                     <h3>Huhaidjopy</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="image_f87af4.png" alt="Mr_Zver3000" class="staff-avatar-img">
                     <h3>Mr_Zver3000</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="image_fa5adf.png" alt="Zaj_zuda3" class="staff-avatar-img">
                     <h3>Zaj_zuda3</h3>
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
@@ -503,6 +512,9 @@
 
         <section class="content-section">
             <h2 class="section-title">📊 Детальна архівна таблиця звітів суду</h2>
+            
+            <p class="section-description">У звітах нижче детально розписані всі показники продуктивності судової системи, кількість успішно опрацьованих позовів, а також рівень зниження корупційних правопорушень на сервері. Розширені звіти допомагають адміністрації та гравцям чітко бачити прозорість роботи державних органів.</p>
+
             <div class="table-box-wrapper">
                 <table class="analytics-table">
                     <thead>
@@ -547,15 +559,23 @@
                 </table>
             </div>
 
-            <div class="event-card">
-                <div class="event-info">
-                    <h3>🏛️ Івент: День Відкритих Дверей Суду</h3>
-                    <p>Запрошуємо всіх громадян на екскурсію та відкриті засідання. Приходьте ознайомитися з роботою суддів!</p>
-                </div>
-                <div class="event-dates">
-                    <span class="date-badge">09 число</span>
-                    <span class="date-badge">17 число</span>
-                    <span class="date-badge">29 число</span>
+            <div class="event-detailed-card">
+                <h3>🏛️ Івент: День Відкритих Дверей Суду</h3>
+                <p><strong>Чому цей івент корисний для гравців?</strong> День відкритих дверей — це унікальна можливість для кожного громадянина Ukraine RP зазирнути за лаштунки судової системи. Учасники зможуть на власні очі побачити процес розгляду справ, зрозуміти свої права та обов'язки, а також задати питання суддям у неформальній обстановці. Це чудово підвищує загальний рівень рольвої гри (RP) на сервері та допомагає уникнути порушень закону через незнання регламентів.</p>
+                
+                <p><strong>Основні правила та переваги участі:</strong></p>
+                <ul class="event-benefits-list">
+                    <li>Ознайомлення з реальними казусами та процедурою захисту в суді.</li>
+                    <li>Можливість особисто поспілкуватися з досвідченими адвокатами та суддями.</li>
+                    <li>Отримання унікального досвіду участі у відкритих рольвих засіданнях.</li>
+                    <li>Повна безпека та відсутність штрафів за питання під час екскурсії (за умови дотримання базової етики).</li>
+                </ul>
+
+                <p><strong>Графік проведення івенту (в які дні проходитиме):</strong></p>
+                <div class="event-schedule-container">
+                    <span class="schedule-badge">📅 09 число місяця</span>
+                    <span class="schedule-badge">📅 17 число місяця</span>
+                    <span class="schedule-badge">📅 29 число місяця</span>
                 </div>
             </div>
         </section>
