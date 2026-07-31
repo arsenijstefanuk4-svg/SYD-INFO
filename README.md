@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -403,7 +402,6 @@
             gap: 6px;
         }
 
-        /* Блок новин від власника / суду внизу */
         .owner-news-branch {
             background: linear-gradient(135deg, #111827 0%, #0d1527 100%);
             border: 1px dashed var(--accent-blue);
@@ -527,7 +525,7 @@
                     <div class="staff-avatar-placeholder">⚖️</div>
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
-                    <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
+                    <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/GreyFild_OFF" target="_blank">@GreyFild_OFF</a></div>
                 </div>
 
                 <div class="staff-profile-card">
