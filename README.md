@@ -1,21 +1,22 @@
-<!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Судова Система | Офіційний Сайт</title>
+    <title>Судова Система | Офіційний Портал</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --card-hover: #1f2937;
+            --text-color: #f3f4f6;
             --accent-color: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --border-color: #334155;
+            --accent-glow: rgba(56, 189, 248, 0.3);
+            --border-color: #374151;
+            --gold: #f59e0b;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -24,20 +25,30 @@
         }
 
         header {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #1e1b4b, #0f172a, #0b0f19);
+            padding: 3rem 1rem;
             text-align: center;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         h1 {
-            margin: 0 0 0.5rem 0;
+            margin: 0;
             color: var(--accent-color);
-            font-size: 2.2rem;
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        header p {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
@@ -45,10 +56,15 @@
         .section {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: #4b5563;
         }
 
         h2 {
@@ -56,160 +72,286 @@
             padding-bottom: 0.5rem;
             margin-top: 0;
             color: var(--accent-color);
+            font-size: 1.8rem;
         }
 
-        /* Випадаюча кнопка (Акордеон) */
+        /* Стильна кнопка-акордеон */
         .dropdown-btn {
-            background-color: #334155;
+            background: linear-gradient(135deg, #1e293b, #334155);
             color: white;
             cursor: pointer;
-            padding: 1rem;
+            padding: 1.2rem;
             width: 100%;
-            border: none;
+            border: 1px solid var(--border-color);
             text-align: left;
-            outline: none;
             font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 8px;
+            border-radius: 10px;
             margin-top: 1rem;
-            transition: background 0.3s;
+            transition: all 0.3s;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         .dropdown-btn:hover {
-            background-color: var(--accent-hover);
+            background: linear-gradient(135deg, #334155, #475569);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
         .dropdown-content {
-            padding: 0 1rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            background-color: rgba(15, 23, 42, 0.5);
-            border-radius: 0 0 8px 8px;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            background-color: rgba(15, 23, 42, 0.7);
+            border-radius: 0 0 10px 10px;
+            padding: 0 1.2rem;
         }
 
         .dropdown-content.show {
-            max-height: 500px;
-            padding: 1rem;
+            max-height: 400px;
+            padding: 1.2rem;
             margin-top: 5px;
+            border: 1px solid var(--border-color);
+            border-top: none;
         }
 
-        /* Сітка працівників суду */
+        /* Картки працівників */
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1.2rem;
         }
 
         .staff-card {
-            background-color: #0f172a;
+            background-color: var(--card-hover);
             border: 1px solid var(--border-color);
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.2rem;
+            border-radius: 12px;
             text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 6px 20px var(--accent-glow);
         }
 
         .staff-card h3 {
-            margin: 0 0 0.3rem 0;
-            color: var(--text-color);
+            margin: 0.5rem 0 0.2rem 0;
+            font-size: 1.2rem;
         }
 
         .role {
             color: var(--accent-color);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .contacts {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #94a3b8;
         }
 
         .contacts a {
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: 600;
         }
 
         .contacts a:hover {
             text-decoration: underline;
         }
 
-        /* Таблиця івентів */
+        /* Таблиці */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            text-align: left;
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
 
         th, td {
-            border: 1px solid var(--border-color);
-            padding: 0.75rem;
-            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         th {
-            background-color: #334155;
+            background-color: #1e293b;
             color: var(--accent-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
         }
 
         tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.02);
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        tr:hover {
+            background-color: rgba(56, 189, 248, 0.05);
+        }
+
+        .badge-up {
+            color: #4ade80;
+            font-weight: bold;
+        }
+
+        .badge-stable {
+            color: var(--accent-color);
+            font-weight: bold;
         }
 
         ul {
             padding-left: 20px;
         }
 
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         footer {
             text-align: center;
-            padding: 1.5rem;
-            background-color: #1e293b;
+            padding: 2rem;
+            background-color: #0b0f19;
             border-top: 1px solid var(--border-color);
-            color: #94a3b8;
+            color: #6b7280;
             font-size: 0.9rem;
         }
 
-        /* Адаптивність під мобільні пристрої */
-        @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            .container { padding: 1rem 0.5rem; }
-            .section { padding: 1rem; }
+        /* Адаптивність для телефонів */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .section { padding: 1.2rem; }
+            th, td { padding: 0.75rem; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🏛️ Офіційна Судова Система</h1>
-        <p>Справедливість, порядок та законність у кожному засіданні</p>
+        <h1>🏛️ Судова Система Сервера</h1>
+        <p>Офіційний портал правосуддя, статистики та безпеки</p>
     </header>
 
     <div class="container">
 
         <div class="section">
-            <h2>Про Суд та Правила</h2>
-            <p>Ласкаво просимо на офіційний портал судової системи. Тут ви можете дізнатися все про роботу наших суддів, ознайомитися з розкладом заходів та правилами поведінки.</p>
+            <h2>Про Суд та Правила Поведінки</h2>
+            <p>Наш суд гарантує справедливий розгляд справ, захист прав гравців та підтримку порядку. Телеграм-канал суду створений Головним Суддею та його Заступником.</p>
             
-            <button class="dropdown-btn"><span>⚖️ Натисніть, щоб відкрити інформацію про суд і правила поведінки</span> <span>▼</span></button>
+            <button class="dropdown-btn">
+                <span>📜 Натисніть, щоб прочитати правила поведінки в суді</span> 
+                <span>▼</span>
+            </button>
             <div class="dropdown-content">
-                <p><strong>Хто ми:</strong> Наш Telegram-канал створений Головним Суддею та його Заступником для координації та інформування гравців.</p>
-                <p><strong>Як себе поводити в суді:</strong></p>
+                <p><strong>Головні правила під час судового засідання:</strong></p>
                 <ul>
-                    <li>Ставтеся до всіх із повагою, дотримуйтесь порядку та поводьтеся адекватно.</li>
-                    <li>Дотримуйтесь повної тиші, не перебивайте учасників судового процесу.</li>
-                    <li>Вставайте під час появи судді та звертайтеся до нього належним чином.</li>
-                    <li>Використання нецензурної лексики чи провокації суворо заборонені.</li>
+                    <li>Ставтеся до всіх учасників із повагою, дотримуйтесь порядку та адекватності.</li>
+                    <li>Дотримуйтесь абсолютної тиші, не перебивайте суддю та інших учасників.</li>
+                    <li>Вставайте в момент появи судді та звертайтеся до нього виключно за регламентом.</li>
+                    <li>Використання нецензурної лексики, образи чи провокації суворо караються.</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
-            <h2>Колектив суду</h2>
+            <h2>📈 Еволюція та Статистика Суду (Історія Звітів)</h2>
+            <p>Як змінювався суд із часом, скільки справ розглядалося та які покращення відбувалися від місяця до місяця:</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Звітний період</th>
+                            <th>Розглянуто справ</th>
+                            <th>Боротьба з корупцією (Пункт 16)</th>
+                            <th>Статус / Еволюція суду</th>
+                            <th>Головні події та досягнення</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Червень – Липень 2026</strong></td>
+                            <td><span class="badge-up">570 справ</span> (677 годин)</td>
+                            <td>23 випадки</td>
+                            <td><span class="badge-up">🚀 Прорив / Пік активності</span></td>
+                            <td>Максимальна прозорість, висока залученість суддів, стабільний правопорядок.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Травень – Червень 2026</strong></td>
+                            <td>310 справ</td>
+                            <td>13 випадків</td>
+                            <td><span class="badge-stable">⚖️ Стабільність</span></td>
+                            <td>Збереження високої якості RP-процесу, чітке дотримання процедур.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Квітень – Травень 2026</strong></td>
+                            <td>380 справ</td>
+                            <td>17 випадків</td>
+                            <td><span class="badge-stable">⚖️ Стабільний розвиток</span></td>
+                            <td>Зниження корупційних проявів, посилення контролю за гравцями.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Березень – Квітень 2026</strong></td>
+                            <td>215 справ</td>
+                            <td>10 випадків</td>
+                            <td><span class="badge-stable">🤝 Тісна співпраця</span></td>
+                            <td>Спільна робота зі СБС, ДБР та НАБС, відхід заступниці (@JonDR_9620R) з почесним рекордом.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Лютий – Березень 2026</strong></td>
+                            <td>190 справ</td>
+                            <td>17 випадків</td>
+                            <td><span class="badge-stable">🔍 Посилений контроль</span></td>
+                            <td>Боротьба з ухиленням від відповідальності (п. 23), аналіз найчастіших порушень (Green Zone).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Січень – Лютий 2026</strong></td>
+                            <td>329 судових засідань</td>
+                            <td>26 випадків</td>
+                            <td><span class="badge-up">🤖 Технологічність</span></td>
+                            <td>Адаптація до нових правил Roblox, запуск судового бота @CourtUR_bot для апеляцій та позовів.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Грудень 2025 – Січень 2026</strong></td>
+                            <td>657 справ</td>
+                            <td>43 випадки</td>
+                            <td><span class="badge-up">⚡ Масштабна активність</span></td>
+                            <td>Рекордне навантаження на суд, сувора боротьба з корупцією та порушеннями.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Вересень – Жовтень 2025</strong></td>
+                            <td>230 – 359 справ</td>
+                            <td>23–29 вироків</td>
+                            <td><span class="badge-stable">🛡️ Безпека середовища</span></td>
+                            <td>Активна депортація порушників зеленої зони (пункт 33), зміцнення довіри до закону.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>👥 Колектив Суду та Адвокатура</h2>
             <div class="staff-grid">
                 
                 <div class="staff-card">
@@ -257,46 +399,48 @@
         </div>
 
         <div class="section">
-            <h2>🏛️ День відкритих дверей у суді!</h2>
-            <p>Наш суд відкриває свої двері для всіх охочих! Це чудовий шанс познайомитися з професією, особливо якщо в майбутньому ви плануєте подаватися на відкритий набір на посаду судді або в охорону.</p>
-            <p><strong>⏰ Коли:</strong> З 10:00 ранку до 22:00 вечора протягом 3 днів.</p>
+            <h2>🚪 День відкритих дверей у суді!</h2>
+            <p>Наш суд відкриває свої двері для всіх охочих протягом 3 днів! Це унікальна можливість побачити роботу суддів зсередини (особливо якщо ви плануєте подаватися на набір на посаду судді або в охорону).</p>
+            <p><strong>⏰ Час проведення щодня:</strong> з 10:00 ранку до 22:00 вечора.</p>
             
-            <table>
-                <thead>
-                    <tr>
-                        <th>День івенту</th>
-                        <th>Час</th>
-                        <th>Що буде на заході</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>День 1</strong> (П'ятниця)</td>
-                        <td>10:00 – 22:00</td>
-                        <td>Екскурсія судом, знайомство з роботою суддів зсередини.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>День 2</strong> (Субота)</td>
-                        <td>10:00 – 22:00</td>
-                        <td>Детальні пояснення судових процесів та відповіді на запитання.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>День 3</strong> (Неділя)</td>
-                        <td>10:00 – 22:00</td>
-                        <td>Фінальні відкриті консультації для майбутніх кандидатів на посади.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>День івенту</th>
+                            <th>Час</th>
+                            <th>Програма заходу</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>День 1</strong> (П'ятниця)</td>
+                            <td>10:00 – 22:00</td>
+                            <td>Екскурсія судом, знайомство з роботою суддівського корпусу.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>День 2</strong> (Субота)</td>
+                            <td>10:00 – 22:00</td>
+                            <td>Пояснення внутрішніх процесів, розбір складних справ та відкритий діалог.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>День 3</strong> (Неділя)</td>
+                            <td>10:00 – 22:00</td>
+                            <td>Фінальні консультації для майбутніх кандидатів на посади суддів та охорони.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Судова Система. Всі права захищені.</p>
+        <p>&copy; 2026 Судова Система | Усі права захищені.</p>
     </footer>
 
     <script>
-        // Скрипт для розгортання інформації по кліку на кнопку
+        // Скрипт для розгортання акордеона правил
         const dropdownBtn = document.querySelector('.dropdown-btn');
         const dropdownContent = document.querySelector('.dropdown-content');
 
