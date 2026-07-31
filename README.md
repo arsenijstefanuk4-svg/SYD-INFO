@@ -18,8 +18,8 @@
             --red: #f87171;
         }
 
-        /* Захист від горизонтального виходу за межі екрана */
-        * {
+        /* Захист від горизонтального виходу за межі екрана для мобільних */
+        *, *::before, *::after {
             box-sizing: border-box;
         }
 
@@ -31,11 +31,12 @@
             padding: 0;
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
         }
 
         header {
             background: linear-gradient(135deg, #1e1b4b, #0f172a, #0b0f19);
-            padding: 3rem 1rem;
+            padding: 2.5rem 1rem;
             text-align: center;
             border-bottom: 3px solid var(--accent-color);
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
@@ -44,7 +45,7 @@
         h1 {
             margin: 0;
             color: var(--accent-color);
-            font-size: 2.3rem;
+            font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 20px var(--accent-glow);
@@ -53,14 +54,15 @@
 
         header p {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-top: 0.5rem;
+            word-break: break-word;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
             width: 100%;
         }
 
@@ -68,24 +70,26 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             margin-bottom: 2rem;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             width: 100%;
+            overflow: hidden;
         }
 
         h2 {
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.5rem;
             margin-top: 0;
             color: var(--accent-color);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             word-break: break-word;
         }
 
         h3 {
             color: #ffffff;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
+            word-break: break-word;
         }
 
         /* Випадаючі списки (акордеони) */
@@ -97,7 +101,7 @@
             width: 100%;
             border: 1px solid var(--border-color);
             text-align: left;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: bold;
             border-radius: 10px;
             margin-top: 1rem;
@@ -121,10 +125,11 @@
             background-color: #0f172a;
             border-radius: 0 0 10px 10px;
             padding: 0 1rem;
+            word-break: break-word;
         }
 
         .dropdown-content.show {
-            max-height: 1000px;
+            max-height: 1200px;
             padding: 1rem;
             margin-top: 5px;
             border: 1px solid var(--border-color);
@@ -134,19 +139,21 @@
         /* Картки працівників */
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
             margin-top: 1.2rem;
+            width: 100%;
         }
 
         .staff-card {
             background-color: var(--card-hover);
             border: 1px solid var(--border-color);
-            padding: 1.2rem 1rem;
+            padding: 1.2rem 0.8rem;
             border-radius: 12px;
             text-align: center;
             transition: all 0.3s;
             overflow: hidden;
+            width: 100%;
         }
 
         .staff-card:hover {
@@ -167,22 +174,23 @@
 
         .staff-card h3 {
             margin: 0.3rem 0;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #ffffff;
             word-break: break-word;
         }
 
         .role {
             color: var(--accent-color);
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-bottom: 0.8rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            word-break: break-word;
         }
 
         .contacts {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--text-muted);
             word-break: break-all;
         }
@@ -201,20 +209,20 @@
         .chart-container {
             position: relative;
             width: 100%;
-            height: 300px;
-            margin-top: 1.5rem;
+            height: 280px;
+            margin-top: 1.2rem;
             background: #0f172a;
             padding: 0.5rem;
             border-radius: 12px;
             border: 1px solid var(--border-color);
         }
 
-        /* Таблиці з прокруткою тільки всередині контейнера */
+        /* Таблиці */
         .table-container {
             width: 100%;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem;
             border-radius: 10px;
             border: 1px solid var(--border-color);
             background-color: #0f172a;
@@ -224,12 +232,12 @@
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             white-space: nowrap;
         }
 
         th, td {
-            padding: 0.8rem 1rem;
+            padding: 0.75rem;
             border-bottom: 1px solid var(--border-color);
             color: #ffffff;
         }
@@ -239,7 +247,7 @@
             color: var(--accent-color);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 1px;
         }
 
@@ -255,7 +263,7 @@
         .badge-down { color: var(--red); font-weight: bold; }
         .badge-stable { color: var(--accent-color); font-weight: bold; }
 
-        ul { padding-left: 20px; color: var(--text-muted); }
+        ul { padding-left: 18px; color: var(--text-muted); }
         li { margin-bottom: 0.5rem; color: #ffffff; word-break: break-word; }
 
         p { word-break: break-word; }
@@ -263,15 +271,16 @@
         .info-box {
             background: rgba(56, 189, 248, 0.08);
             border-left: 4px solid var(--accent-color);
-            padding: 1rem;
+            padding: 0.8rem;
             margin: 1rem 0;
             border-radius: 0 8px 8px 0;
             color: #ffffff;
+            word-break: break-word;
         }
 
         footer {
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
             background-color: #0b0f19;
             border-top: 1px solid var(--border-color);
             color: var(--text-muted);
@@ -296,7 +305,7 @@
             <div class="chart-container">
                 <canvas id="courtStockChart"></canvas>
             </div>
-            <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">* Значення показують загальну кількість засідань та звернень.</p>
+            <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 0.8rem;">* Значення показують загальну кількість засідань та звернень.</p>
         </div>
 
         <div class="section">
@@ -362,35 +371,35 @@
                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B4A15A631FE87B6BD4B20C3E2BB3AECC-Png/150/150/AvatarHeadshot/noFilter" alt="Arseniy_zabanen" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=GS'">
                     <h3>Arseniy_zabanen</h3>
                     <div class="role">Головний Суддя (ГС)</div>
-                    <div class="contacts">TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
+                    <div class="contacts">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-card">
                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-11111111111111111111111111111111-Png/150/150/AvatarHeadshot/noFilter" alt="mummu228kuku" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Zast'">
                     <h3>mummu228kuku</h3>
                     <div class="role">Заступник</div>
-                    <div class="contacts">TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
+                    <div class="contacts">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-card">
                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-22222222222222222222222222222222-Png/150/150/AvatarHeadshot/noFilter" alt="svervanchick" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Judge'">
                     <h3>svervanchick</h3>
                     <div class="role">Суддя</div>
-                    <div class="contacts">TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
+                    <div class="contacts">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-card">
                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-33333333333333333333333333333333-Png/150/150/AvatarHeadshot/noFilter" alt="Huhaidjopy" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Judge'">
                     <h3>Huhaidjopy</h3>
                     <div class="role">Суддя</div>
-                    <div class="contacts">TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
+                    <div class="contacts">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Judge'">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/80/111827/38bdf8?text=Zver'">
                     <h3>Mr_Zver3000</h3>
                     <div class="role">Суддя</div>
-                    <div class="contacts">Roblox Role</div>
+                    <div class="contacts">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-card">
