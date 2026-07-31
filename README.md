@@ -70,7 +70,7 @@
             margin: 0 auto;
         }
 
-        /* Унікальний та величезний блок СУД ІНФО */
+        /* Величезний та красивий блок СУД ІНФО */
         .hero-info-box {
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
             border: 2px solid var(--accent-blue);
@@ -96,8 +96,8 @@
         .hero-info-box p {
             color: #cbd5e1;
             font-size: 1.15rem;
-            max-width: 900px;
-            margin: 0 auto 25px auto;
+            max-width: 950px;
+            margin: 0 auto 15px auto;
             line-height: 1.8;
         }
 
@@ -195,19 +195,28 @@
 
         .staff-grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
 
         .staff-profile-card {
-            background-color: var(--bg-card-hover);
+            background: linear-gradient(135deg, #151d30 0%, #0e1322 100%);
             border: 1px solid var(--border-primary);
-            padding: 25px 15px;
+            padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
             transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .staff-profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--accent-blue);
         }
 
         .staff-profile-card:hover {
@@ -216,8 +225,22 @@
             box-shadow: 0 10px 30px var(--accent-glow);
         }
 
+        .staff-avatar-placeholder {
+            width: 75px;
+            height: 75px;
+            background: rgba(14, 165, 233, 0.15);
+            border: 2px solid var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
         .staff-profile-card h3 {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             margin-bottom: 6px;
             color: var(--text-main);
         }
@@ -228,15 +251,15 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: inline-block;
             background: rgba(14, 165, 233, 0.1);
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
         }
 
         .staff-contacts-info {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             word-break: break-all;
         }
@@ -380,6 +403,32 @@
             gap: 6px;
         }
 
+        /* Блок новин від власника / суду внизу */
+        .owner-news-branch {
+            background: linear-gradient(135deg, #111827 0%, #0d1527 100%);
+            border: 1px dashed var(--accent-blue);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .owner-news-branch h3 {
+            color: var(--accent-blue);
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .owner-news-branch p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
         .portal-footer {
             text-align: center;
             padding: 25px 20px;
@@ -388,7 +437,7 @@
             border-radius: 16px;
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-top: 40px;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -403,7 +452,8 @@
 
         <div class="hero-info-box">
             <h2>⚖️ СУД ІНФО UKRAINE RP ⚖️</h2>
-            <p>Ваш надійний путівник у світі державних законів, судових регламентів та захисту прав громадян. Тут зібрана вичерпна інформація про правила поведінки під час засідань, юридичні стандарти та роботу колегії суддів.</p>
+            <p>Головний інформаційний центр судової системи! Тут зібрані всі офіційні правила дотримання законів, регламенти захисту прав громадян, розклад засідань та інструкції з взаємодії з державними органами на нашому сервері.</p>
+            <p>Наша мета — забезпечити максимальну прозорість, справедливість та високий рівень рольової гри (RP) для кожного гравця Ukraine RP.</p>
         </div>
 
         <section class="content-section">
@@ -415,46 +465,55 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">⚖️ Нормативно-правова база та Регламент поведінки</h2>
-            <p class="section-description">Детальні інструкції щодо етики та законів у залі судових засідань:</p>
+            <h2 class="section-title">⚖️ Нормативно-правова база та Правила Сервера</h2>
+            <p class="section-description">Детальні інструкції щодо поведінки, етики та законності дій на сервері:</p>
             
             <div class="dropdown-element">
                 <button class="dropdown-toggle-btn">
-                    <span>👔 Етика та правила поведінки в залі суду (Детально)</span> 
+                    <span>📜 Загальна етика та правила поведінки в суді</span> 
                     <span>▼</span>
                 </button>
                 <div class="dropdown-panel">
-                    <p><strong>Головні правила для кожного учасника:</strong></p>
+                    <p><strong>Головні норми поведінки для учасників та гостей засідання:</strong></p>
                     <ul>
-                        <li><strong>Звернення до судді:</strong> Виключно офіційно та з повагою — <em>«Ваша Честь»</em> або <em>«Шановний Судде»</em>.</li>
-                        <li><strong>Дисципліна:</strong> Заборонено перебивати виступи інших сторін, викрикувати, проявляти емоції чи використовувати нецензурну лексику.</li>
-                        <li><strong>Вставання:</strong> Усі присутні зобов'язані вставати при вході судді до залу засідань та під час оголошення вироку.</li>
-                        <li><strong>Мобільні пристрої:</strong> Телефони мають бути переведені в беззвучний режим. Зйомка або запис дозволені лише за попереднім дозволом головуючого.</li>
+                        <li><strong>Форма звернення:</strong> До судді слід звертатися виключно офіційно та шанобливо — <em>«Ваша Честь»</em> або <em>«Шановний Судде»</em>.</li>
+                        <li><strong>Порядок у залі:</strong> Заборонено перебивати виступи інших сторін, викрикувати, провокувати конфлікти або вести себе деструктивно.</li>
+                        <li><strong>Рольова взаємодія:</strong> Усі аргументи повинні подаватися виключно через якісні RP-описи та докази (фрапси, скріншоти, свідчення очевидців).</li>
                     </ul>
                     <div class="notice-box">
-                        <strong>⚠️ Наслідки порушень:</strong> За неповагу до суду або порушення регламенту накладається штраф або виводиться попередження з подальшим видаленням із зали.
+                        <strong>⚠️ Важливо:</strong> Порушення регламенту розглядається як неувага до суду та карається сервером або видаленням із зали засідань.
                     </div>
                 </div>
             </div>
 
             <div class="dropdown-element">
                 <button class="dropdown-toggle-btn">
-                    <span>🛡️ Що таке обшук в RP і чому він законний?</span> 
+                    <span>🛡️ Правила обшуку та законність дій держструктур</span> 
                     <span>▼</span>
                 </button>
                 <div class="dropdown-panel">
-                    <p><strong>Законність процедури:</strong> Обшук є стандартною процесуальною дією уповноважених правоохоронних органів. Якщо вона виконується згідно з правилами сервера (з використанням команд <code>/me</code>, <code>/do</code> та за наявності вагомої підстави чи санкції), вона є повністю законною.</p>
-                    <p><strong>Доказова база:</strong> Будь-які заборонені предмети, виявлені під час правильного RP-обшуку, вважаються легітимними доказами у судовому засіданні.</p>
+                    <p><strong>Стандарти проведення процесуальних дій:</strong></p>
+                    <ul>
+                        <li>Обшук або затримання вважаються легітимними лише за наявності вагомої RP-підстави та правильного відігравання через команди <code>/me</code>, <code>/do</code>.</li>
+                        <li>Будь-які докази, зібрані з порушенням серверних правил або чинного законодавства, визнаються судом недійсними.</li>
+                        <li>Кожен громадянин має право на виклик адвоката та оскарження неправомірних дій у судовому порядку.</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="dropdown-element">
                 <button class="dropdown-toggle-btn">
-                    <span>👥 Повноваження та обов'язки суддівського корпусу</span> 
+                    <span>🤖 Про офіційний Судовий Бот Ukraine RP</span> 
                     <span>▼</span>
                 </button>
                 <div class="dropdown-panel">
-                    <p>Судді здійснюють правосуддя, розглядають цивільні та кримінальні позови, борються з проявами корупції та виносять виважені, об'єктивні рішення на користь дотримання закону.</p>
+                    <p>Наш інтегрований судовий бот створений для автоматизації подачі позовів, перевірки статусів справ та оперативної комунікації з громадянами.</p>
+                    <p><strong>Основні можливості бота:</strong></p>
+                    <ul>
+                        <li>Миттєва подача електронної заяви до суду.</li>
+                        <li>Сповіщення про дати та час призначених засідань.</li>
+                        <li>Швидкий доступ до контактів суддів та адвокатів.</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -465,36 +524,42 @@
             
             <div class="staff-grid-container">
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">⚖️</div>
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
                     <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">🏛️</div>
                     <h3>mummu228kuku</h3>
                     <div class="staff-role-badge">Заступник</div>
                     <div class="staff-contacts-info">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">📜</div>
                     <h3>svervanchick</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">⚖️</div>
                     <h3>Huhaidjopy</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">🛡️</div>
                     <h3>Mr_Zver3000</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-profile-card">
+                    <div class="staff-avatar-placeholder">💼</div>
                     <h3>Zaj_zuda3</h3>
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
@@ -503,8 +568,8 @@
         </section>
 
         <section class="content-section">
-            <h2 class="section-title">📊 Детальна архівна таблиця звітів суду</h2>
-            <p class="section-description">У звітах нижче детально розписані всі показники продуктивності судової системи, кількість успішно опрацьованих позовів, а також рівень зниження корупційних правопорушень на сервері. Розширені звіти допомагають адміністрації та гравцям чітко бачити прозорість роботи державних органів.</p>
+            <h2 class="section-title">📊 Детальна архівна таблиця звітів та порушень</h2>
+            <p class="section-description">У звітах нижче зібрано повну статистику розгляду справ, аналіз порушень серверних регламентів та ефективність роботи колегії:</p>
 
             <div class="table-box-wrapper">
                 <table class="analytics-table">
@@ -512,7 +577,7 @@
                         <tr>
                             <th>Звітний період</th>
                             <th>Опрацьовано справ</th>
-                            <th>Корупційні справи</th>
+                            <th>Порушення регламентів</th>
                             <th>Статус системи</th>
                             <th>Головна подія періоду</th>
                         </tr>
@@ -521,28 +586,28 @@
                         <tr>
                             <td><strong>Червень – Липень 2026</strong></td>
                             <td><span class="status-up">570 справ</span></td>
-                            <td>23 випадки</td>
+                            <td>38 інцидентів</td>
                             <td><span class="status-up">🚀 Пік активності</span></td>
                             <td>Максимальна продуктивність колегії.</td>
                         </tr>
                         <tr>
                             <td><strong>Травень – Червень 2026</strong></td>
                             <td>310 справ</td>
-                            <td>13 випадків</td>
+                            <td>21 інцидент</td>
                             <td><span class="status-stable">⚖️ Стабільний режим</span></td>
                             <td>Якісне виконання регламентів.</td>
                         </tr>
                         <tr>
                             <td><strong>Січень – Лютий 2026</strong></td>
                             <td>329 засідань</td>
-                            <td>26 випадків</td>
+                            <td>29 інцидентів</td>
                             <td><span class="status-stable">🤖 Цифровізація</span></td>
                             <td>Запуск інформаційного бота.</td>
                         </tr>
                         <tr>
                             <td><strong>Грудень 2025 – Січень 2026</strong></td>
                             <td><span class="status-up">657 справ</span></td>
-                            <td>43 випадки</td>
+                            <td>52 інциденти</td>
                             <td><span class="status-up">⚡ Рекорд</span></td>
                             <td>Найвище навантаження в історії.</td>
                         </tr>
@@ -552,22 +617,26 @@
 
             <div class="event-detailed-card">
                 <h3>🏛️ Івент: День Відкритих Дверей Суду</h3>
-                <p><strong>Чому цей івент корисний для гравців?</strong> День відкритих дверей — це унікальна можливість для кожного громадянина Ukraine RP зазирнути за лаштунки судової системи. Учасники зможуть на власні очі побачити процес розгляду справ, зрозуміти свої права та обов'язки, а також задати питання суддям у неформальній обстановці. Це чудово підвищує загальний рівень рольвої гри (RP) на сервері та допомагає уникнути порушень закону через незнання регламентів.</p>
+                <p><strong>Чому цей івент корисний для гравців?</strong> День відкритих дверей — це унікальна можливість зазирнути за лаштунки судової системи, зрозуміти свої права та навчитися грамотно захищати себе в рольових ситуаціях без порушення правил сервера.</p>
                 
-                <p><strong>Основні правила та переваги участі:</strong></p>
+                <p><strong>Переваги участі:</strong></p>
                 <ul class="event-benefits-list">
-                    <li>Ознайомлення з реальними казусами та процедурою захисту в суді.</li>
-                    <li>Можливість особисто поспілкуватися з досвідченими адвокатами та суддями.</li>
-                    <li>Отримання унікального досвіду участі у відкритих рольвих засіданнях.</li>
-                    <li>Повна безпека та відсутність штрафів за питання під час екскурсії (за умови дотримання базової етики).</li>
+                    <li>Живе спілкування з досвідченими суддями та адвокатами.</li>
+                    <li>Розбір реальних кейсів та процесуальних помилок.</li>
+                    <li>Унікальний ігровий досвід та гарний настрій.</li>
                 </ul>
 
-                <p><strong>Графік проведення івенту (в які дні проходитиме):</strong></p>
+                <p><strong>Графік проведення івенту:</strong></p>
                 <div class="event-schedule-container">
                     <span class="schedule-badge">📅 09 число місяця</span>
                     <span class="schedule-badge">📅 17 число місяця</span>
                     <span class="schedule-badge">📅 29 число місяця</span>
                 </div>
+            </div>
+
+            <div class="owner-news-branch">
+                <h3>📢 Новини та оновлення від керівництва суду</h3>
+                <p>У цій гілці суд та власник сайту публікують актуальні внутрішні новини, майбутні оновлення судової системи, а також корисні поради щодо покращення рольової гри на сервері. Слідкуйте за оновленнями порталу, щоб бути в курсі найважливіших державних подій Ukraine RP!</p>
             </div>
         </section>
 
