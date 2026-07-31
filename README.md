@@ -3,12 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Офіційний Портал Судової Системи — Повна Розширена Версія</title>
+    <title>Офіційний Портал Судової Системи — Ukraine RP</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* ==========================================================================
-           1. CSS RESET, ROOT VARIABLES & BASE STYLES
-           ========================================================================== */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
@@ -47,9 +44,6 @@
             margin: 0 auto;
         }
 
-        /* ==========================================================================
-           2. HEADER COMPONENT STYLING
-           ========================================================================== */
         .portal-header {
             background: linear-gradient(135deg, #0b101d 0%, #151d30 100%);
             border: 1px solid var(--border-primary);
@@ -59,7 +53,6 @@
             border-radius: 18px;
             margin-bottom: 30px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-            position: relative;
         }
 
         .portal-header h1 {
@@ -78,9 +71,6 @@
             margin: 0 auto;
         }
 
-        /* ==========================================================================
-           3. SECTION & CONTENT BOXES
-           ========================================================================== */
         .content-section {
             background-color: var(--bg-card);
             border: 1px solid var(--border-primary);
@@ -111,9 +101,31 @@
             margin-bottom: 20px;
         }
 
-        /* ==========================================================================
-           4. DROPDOWN ACCORDION MODULES
-           ========================================================================== */
+        /* Новини оновлення */
+        .news-banner {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), #0b101d);
+            border: 1px solid var(--accent-blue);
+            border-radius: 14px;
+            padding: 20px 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .news-banner h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .news-banner p {
+            color: #d1d5db;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
         .dropdown-element {
             margin-top: 14px;
         }
@@ -183,9 +195,6 @@
             color: #ffffff;
         }
 
-        /* ==========================================================================
-           5. STAFF & TEAM GRID CARDS (з робочими аватарами)
-           ========================================================================== */
         .staff-grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -257,9 +266,6 @@
             text-decoration: underline;
         }
 
-        /* ==========================================================================
-           6. CHART & ANALYTICS MODULES
-           ========================================================================== */
         .chart-box-wrapper {
             position: relative;
             width: 100%;
@@ -288,35 +294,80 @@
             white-space: nowrap;
         }
 
+        /* Виправлено контраст таблиці: темно-синій фон та яскравий текст для ПК */
         .analytics-table th, .analytics-table td {
             padding: 14px 18px;
             border-bottom: 1px solid var(--border-primary);
-            color: var(--text-main);
+            color: #f8fafc !important;
         }
 
         .analytics-table th {
-            background-color: #151d30;
-            color: var(--accent-blue);
+            background-color: #151d30 !important;
+            color: var(--accent-blue) !important;
             font-weight: 600;
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
         }
 
+        .analytics-table tbody tr {
+            background-color: #0b101d !important;
+        }
+
         .analytics-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.015);
+            background-color: #0f1626 !important;
         }
 
         .analytics-table tr:hover {
-            background-color: rgba(14, 165, 233, 0.06);
+            background-color: rgba(14, 165, 233, 0.1) !important;
         }
 
         .status-up { color: var(--success-color); font-weight: bold; }
         .status-stable { color: var(--accent-blue); font-weight: bold; }
 
-        /* ==========================================================================
-           7. FOOTER COMPONENT
-           ========================================================================== */
+        /* Івент відкритих дверей */
+        .event-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(15, 23, 42, 0.9));
+            border: 1px solid var(--accent-blue);
+            border-radius: 14px;
+            padding: 20px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .event-info h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .event-info p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .event-dates {
+            display: flex;
+            gap: 10px;
+        }
+
+        .date-badge {
+            background: #151d30;
+            border: 1px solid var(--accent-blue);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+        }
+
         .portal-footer {
             text-align: center;
             padding: 25px 20px;
@@ -335,9 +386,16 @@
     <div class="main-container">
         
         <header class="portal-header">
-            <h1>🏛️ Офіційний Портал Судової Системи</h1>
+            <h1>🏛️ Офіційний Портал Судової Системи Ukraine RP</h1>
             <p>Централізований державний реєстр судових проваджень, регламентів, звітності та керівного складу колегії</p>
         </header>
+
+        <div class="news-banner">
+            <h3>⚡ Уже в найближчий час стане доступно оновлення Суду Ukraine RP!</h3>
+            <p>За сьогодні була проведена невелика доработка системи: покращено роботу суду, змінено деякі внутрішні функції та внесено кілька корегувань для більш зручного ігрового процесу.</p>
+            <p>Це ще не все — попереду на вас чекають нові можливості та інші цікаві зміни.</p>
+            <p>🔥 <strong>Слідкуйте за новинами, зовсім скоро покажемо все повністю.</strong></p>
+        </div>
 
         <section class="content-section">
             <h2 class="section-title">📈 Біржа Активності та Статистика Суду</h2>
@@ -399,42 +457,42 @@
             <div class="staff-grid-container">
                 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Arseniy_zabanen" class="staff-avatar-img">
+                    <img src="image_f9099c.png" alt="Arseniy_zabanen" class="staff-avatar-img">
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
                     <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="mummu228kuku" class="staff-avatar-img">
+                    <img src="image_f90c86.png" alt="mummu228kuku" class="staff-avatar-img">
                     <h3>mummu228kuku</h3>
                     <div class="staff-role-badge">Заступник</div>
                     <div class="staff-contacts-info">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80" alt="svervanchick" class="staff-avatar-img">
+                    <img src="image_f9021a.png" alt="svervanchick" class="staff-avatar-img">
                     <h3>svervanchick</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=200&auto=format&fit=crop&q=80" alt="Huhaidjopy" class="staff-avatar-img">
+                    <img src="image_f8fdc4.png" alt="Huhaidjopy" class="staff-avatar-img">
                     <h3>Huhaidjopy</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=80" alt="Mr_Zver3000" class="staff-avatar-img">
+                    <img src="image_f87af4.png" alt="Mr_Zver3000" class="staff-avatar-img">
                     <h3>Mr_Zver3000</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/Mr_Zver3000" target="_blank">@Mr_Zver3000</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80" alt="Zaj_zuda3" class="staff-avatar-img">
+                    <img src="image_fa5adf.png" alt="Zaj_zuda3" class="staff-avatar-img">
                     <h3>Zaj_zuda3</h3>
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
@@ -488,16 +546,27 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="event-card">
+                <div class="event-info">
+                    <h3>🏛️ Івент: День Відкритих Дверей Суду</h3>
+                    <p>Запрошуємо всіх громадян на екскурсію та відкриті засідання. Приходьте ознайомитися з роботою суддів!</p>
+                </div>
+                <div class="event-dates">
+                    <span class="date-badge">09 число</span>
+                    <span class="date-badge">17 число</span>
+                    <span class="date-badge">29 число</span>
+                </div>
+            </div>
         </section>
 
         <footer class="portal-footer">
-            <p>&copy; 2026 Офіційний Портал Судової Системи. Усі права захищені.</p>
+            <p>&copy; 2026 Офіційний Портал Судової Системи Ukraine RP. Усі права захищені.</p>
         </footer>
 
     </div>
 
     <script>
-        // Скрипт для роботи випадаючих списків (акордеонів)
         document.querySelectorAll('.dropdown-toggle-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const panel = this.nextElementSibling;
@@ -507,7 +576,6 @@
             });
         });
 
-        // Ініціалізація та побудова графіка активності за допомогою Chart.js
         const chartCanvasContext = document.getElementById('courtStockChart').getContext('2d');
         const courtStockChart = new Chart(chartCanvasContext, {
             type: 'line',
