@@ -367,13 +367,6 @@
                 </div>
 
                 <div class="staff-card">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-44444444444444444444444444444444-Png/150/150/AvatarHeadshot/noFilter" alt="ferd1358" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=F'">
-                    <h3>ferd1358</h3>
-                    <div class="role">Суддя</div>
-                    <div class="contacts">TG: <a href="https://t.me/GreyFild_OFF" target="_blank">@GreyFild_OFF</a></div>
-                </div>
-
-                <div class="staff-card">
                     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-55555555555555555555555555555555-Png/150/150/AvatarHeadshot/noFilter" alt="Mr_Zver3000" class="avatar" onerror="this.src='https://via.placeholder.com/90/131c31/38bdf8?text=Z'">
                     <h3>Mr_Zver3000</h3>
                     <div class="role">Суддя</div>
@@ -476,19 +469,19 @@
                         <tr>
                             <th>День івенту</th>
                             <th>Час</th>
-                            <th>Програма</th>
+                            <th>Програма заходу</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>День 1</strong> (П'ятниця)</td>
                             <td>10:00 – 22:00</td>
-                            <td>Екскурсія судом та знайомство з колективом.</td>
+                            <td>Екскурсія судом, знайомство з роботою суддівського корпусу.</td>
                         </tr>
                         <tr>
                             <td><strong>День 2</strong> (Субота)</td>
                             <td>10:00 – 22:00</td>
-                            <td>Розбір реальних справ та відповіді на питання гравців.</td>
+                            <td>Пояснення внутрішніх процесів, розбір складних справ та відкритий діалог.</td>
                         </tr>
                         <tr>
                             <td><strong>День 3</strong> (Неділя)</td>
