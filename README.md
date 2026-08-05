@@ -43,6 +43,18 @@
             margin: 0 auto;
         }
 
+        /* Анімації появи елементів (скрол) */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .portal-header {
             background: linear-gradient(135deg, #090f1d 0%, #111b33 100%);
             border: 1px solid var(--border-primary);
@@ -242,7 +254,6 @@
             box-shadow: 0 12px 35px var(--accent-glow);
         }
 
-        /* Покращений блок для фото суддів */
         .staff-avatar-wrapper {
             width: 85px;
             height: 85px;
@@ -477,18 +488,18 @@
 
     <div class="main-container">
         
-        <header class="portal-header">
+        <header class="portal-header animate-on-scroll">
             <h1>🏛️ Офіційний Портал Судової Системи Ukraine RP</h1>
             <p>Централізований державний реєстр судових проваджень, регламентів, звітності та керівного складу колегії</p>
         </header>
 
-        <div class="hero-info-box">
+        <div class="hero-info-box animate-on-scroll">
             <h2>⚖️ СУД ІНФО UKRAINE RP ⚖️</h2>
             <p>Головний інформаційний центр судової системи! Тут зібрані всі офіційні правила дотримання законів, регламенти захисту прав громадян, розклад засідань та інструкції з взаємодії з державними органами на нашому сервері.</p>
             <p>Наша мета — забезпечити максимальну прозорість, справедливість та високий рівень рольової гри (RP) для кожного гравця Ukraine RP.</p>
         </div>
 
-        <section class="content-section">
+        <section class="content-section animate-on-scroll">
             <h2 class="section-title">📈 Біржа Активності та Статистика Суду</h2>
             <p class="section-description">Інтерактивна динаміка розгляду позовів, засідань та звернень громадян за звітні періоди:</p>
             <div class="chart-box-wrapper">
@@ -496,7 +507,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section animate-on-scroll">
             <h2 class="section-title">⚖️ Нормативно-правова база та Правила Сервера</h2>
             <p class="section-description">Детальні інструкції щодо поведінки, етики та законності дій на сервері:</p>
             
@@ -550,7 +561,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section animate-on-scroll">
             <h2 class="section-title">🏛️ Колектив суду та Адвокатура</h2>
             <p class="section-description">Офіційний кадровий склад керівництва, суддівської колегії та представників захисту:</p>
             
@@ -611,7 +622,7 @@
             </div>
         </section>
 
-        <section class="content-section">
+        <section class="content-section animate-on-scroll">
             <h2 class="section-title">📊 Детальна архівна таблиця звітів та порушень</h2>
             <p class="section-description">У звітах нижче зібрано повну статистику розгляду справ, аналіз порушень серверних регламентів та ефективність роботи колегії:</p>
 
@@ -691,7 +702,7 @@
             </div>
         </section>
 
-        <footer class="portal-footer">
+        <footer class="portal-footer animate-on-scroll">
             <p>&copy; 2026 Офіційний Портал Судової Системи Ukraine RP. Усі права захищені.</p>
         </footer>
 
@@ -704,6 +715,26 @@
                 panel.classList.toggle('expanded');
                 const arrowIndicator = this.querySelector('span:last-child');
                 arrowIndicator.textContent = panel.classList.contains('expanded') ? '▲' : '▼';
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.content-section, .hero-info-box, .portal-header, .portal-footer').forEach(section => {
+                section.classList.add('animate-on-scroll');
+                observer.observe(section);
             });
         });
 
