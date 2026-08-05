@@ -70,7 +70,6 @@
             margin: 0 auto;
         }
 
-        /* Величезний та красивий блок СУД ІНФО */
         .hero-info-box {
             background: linear-gradient(135deg, #0b1329 0%, #171c4a 100%);
             border: 2px solid var(--accent-blue);
@@ -243,18 +242,30 @@
             box-shadow: 0 12px 35px var(--accent-glow);
         }
 
-        .staff-avatar-placeholder {
-            width: 75px;
-            height: 75px;
-            background: rgba(14, 165, 233, 0.15);
-            border: 2px solid var(--accent-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
+        /* Покращений блок для фото суддів */
+        .staff-avatar-wrapper {
+            width: 85px;
+            height: 85px;
             margin: 0 auto 15px auto;
+            position: relative;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--accent-blue), #818cf8);
             box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .staff-avatar-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--bg-card);
+            background-color: var(--bg-secondary);
+            transition: transform var(--transition-speed);
+        }
+
+        .staff-profile-card:hover .staff-avatar-wrapper img {
+            transform: scale(1.05);
         }
 
         .staff-profile-card h3 {
@@ -545,42 +556,54 @@
             
             <div class="staff-grid-container">
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">⚖️</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="Arseniy_zabanen">
+                    </div>
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
                     <div class="staff-contacts-info">Roblox: Arseniy_zabanen<br>TG: <a href="https://t.me/Samyry228" target="_blank">@Samyry228</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">🏛️</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="mummu228kuku">
+                    </div>
                     <h3>mummu228kuku</h3>
                     <div class="staff-role-badge">Заступник</div>
                     <div class="staff-contacts-info">Roblox: mummu228kuku<br>TG: <a href="https://t.me/here_everyone" target="_blank">@here_everyone</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">📜</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="svervanchick">
+                    </div>
                     <h3>svervanchick</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: svervanchick<br>TG: <a href="https://t.me/Svervanchik" target="_blank">@Svervanchik</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">⚖️</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="Huhaidjopy">
+                    </div>
                     <h3>Huhaidjopy</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Huhaidjopy<br>TG: <a href="https://t.me/bewewewewewe" target="_blank">@bewewewewewe</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">🛡️</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="Mr_Zver3000">
+                    </div>
                     <h3>Mr_Zver3000</h3>
                     <div class="staff-role-badge">Суддя</div>
                     <div class="staff-contacts-info">Roblox: Mr_Zver3000<br>TG: <a href="https://t.me/GreyFild_OFF" target="_blank">@GreyFild_OFF</a></div>
                 </div>
 
                 <div class="staff-profile-card">
-                    <div class="staff-avatar-placeholder">💼</div>
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="Zaj_zuda3">
+                    </div>
                     <h3>Zaj_zuda3</h3>
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
