@@ -12,29 +12,30 @@
         }
 
         :root {
-            --bg-primary: #050811;
-            --bg-secondary: #0b101d;
-            --bg-card: #111827;
-            --bg-card-hover: #192338;
-            --border-primary: #1f293d;
-            --border-accent: #0ea5e9;
+            --bg-primary: #030712;
+            --bg-secondary: #090f1d;
+            --bg-card: #0d1527;
+            --bg-card-hover: #131c33;
+            --border-primary: #1e293b;
+            --border-accent: #38bdf8;
             --accent-blue: #0ea5e9;
             --accent-blue-hover: #38bdf8;
-            --accent-glow: rgba(14, 165, 233, 0.25);
+            --accent-glow: rgba(14, 165, 233, 0.35);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --success-color: #22c55e;
             --warning-color: #f59e0b;
-            --transition-speed: 0.3s;
+            --transition-speed: 0.35s;
         }
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-primary);
+            background: radial-gradient(circle at top center, #0f172a 0%, #030712 70%);
             color: var(--text-main);
             line-height: 1.7;
             padding: 25px;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
         .main-container {
@@ -43,14 +44,14 @@
         }
 
         .portal-header {
-            background: linear-gradient(135deg, #0b101d 0%, #151d30 100%);
+            background: linear-gradient(135deg, #090f1d 0%, #111b33 100%);
             border: 1px solid var(--border-primary);
             border-bottom: 4px solid var(--accent-blue);
             padding: 35px 20px;
             text-align: center;
-            border-radius: 18px;
+            border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .portal-header h1 {
@@ -59,7 +60,7 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 10px;
-            text-shadow: 0 0 20px var(--accent-glow);
+            text-shadow: 0 0 25px var(--accent-glow);
         }
 
         .portal-header p {
@@ -71,13 +72,13 @@
 
         /* Величезний та красивий блок СУД ІНФО */
         .hero-info-box {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            background: linear-gradient(135deg, #0b1329 0%, #171c4a 100%);
             border: 2px solid var(--accent-blue);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 40px 30px;
             margin-bottom: 30px;
             text-align: center;
-            box-shadow: 0 0 35px rgba(14, 165, 233, 0.3);
+            box-shadow: 0 0 45px rgba(14, 165, 233, 0.25), inset 0 0 20px rgba(56, 189, 248, 0.1);
         }
 
         .hero-info-box h2 {
@@ -89,7 +90,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 15px;
-            text-shadow: 0 0 30px rgba(56, 189, 248, 0.4);
+            text-shadow: 0 0 35px rgba(56, 189, 248, 0.5);
         }
 
         .hero-info-box p {
@@ -101,12 +102,24 @@
         }
 
         .content-section {
-            background-color: var(--bg-card);
+            background: linear-gradient(135deg, #0d1527 0%, #080d1a 100%);
             border: 1px solid var(--border-primary);
-            border-radius: 18px;
-            padding: 30px;
+            border-radius: 20px;
+            padding: 35px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), transparent);
         }
 
         .section-title {
@@ -116,6 +129,7 @@
             border-bottom: 2px solid var(--border-primary);
             padding-bottom: 10px;
             display: inline-block;
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
         }
 
         .section-description {
@@ -129,43 +143,46 @@
         }
 
         .dropdown-toggle-btn {
-            background: linear-gradient(135deg, #151d30 0%, #0e1322 100%);
+            background: linear-gradient(135deg, #131d35 0%, #0a1020 100%);
             color: var(--text-main);
             cursor: pointer;
-            padding: 15px 20px;
+            padding: 16px 22px;
             width: 100%;
             border: 1px solid var(--border-primary);
             text-align: left;
             font-size: 1.05rem;
             font-weight: 600;
-            border-radius: 12px;
+            border-radius: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: all var(--transition-speed);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .dropdown-toggle-btn:hover {
-            background: linear-gradient(135deg, #1c2744 0%, #151d30 100%);
+            background: linear-gradient(135deg, #1c2b4e 0%, #111a30 100%);
             border-color: var(--accent-blue);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--accent-glow);
         }
 
         .dropdown-panel {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
             background-color: var(--bg-secondary);
-            border-radius: 0 0 12px 12px;
-            padding: 0 20px;
+            border-radius: 0 0 14px 14px;
+            padding: 0 22px;
             border: 1px solid transparent;
         }
 
         .dropdown-panel.expanded {
             max-height: 1200px;
-            padding: 20px;
+            padding: 22px;
             margin-top: 4px;
             border-color: var(--border-primary);
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.4);
         }
 
         .dropdown-panel p, .dropdown-panel ul {
@@ -183,13 +200,14 @@
         }
 
         .notice-box {
-            background: rgba(14, 165, 233, 0.08);
+            background: rgba(14, 165, 233, 0.1);
             border-left: 4px solid var(--accent-blue);
             padding: 14px;
             margin-top: 15px;
-            border-radius: 0 8px 8px 0;
+            border-radius: 0 10px 10px 0;
             font-size: 0.9rem;
             color: #ffffff;
+            box-shadow: inset 0 0 10px rgba(14,165,233,0.05);
         }
 
         .staff-grid-container {
@@ -200,13 +218,13 @@
         }
 
         .staff-profile-card {
-            background: linear-gradient(135deg, #151d30 0%, #0e1322 100%);
+            background: linear-gradient(135deg, #131d36 0%, #0a1122 100%);
             border: 1px solid var(--border-primary);
             padding: 30px 20px;
-            border-radius: 16px;
+            border-radius: 18px;
             text-align: center;
             transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
         }
@@ -216,12 +234,13 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 4px;
             background: var(--accent-blue);
+            box-shadow: 0 0 10px var(--accent-blue);
         }
 
         .staff-profile-card:hover {
             transform: translateY(-6px);
             border-color: var(--accent-blue);
-            box-shadow: 0 10px 30px var(--accent-glow);
+            box-shadow: 0 12px 35px var(--accent-glow);
         }
 
         .staff-avatar-placeholder {
@@ -235,7 +254,7 @@
             justify-content: center;
             font-size: 1.8rem;
             margin: 0 auto 15px auto;
-            box-shadow: 0 0 15px var(--accent-glow);
+            box-shadow: 0 0 20px var(--accent-glow);
         }
 
         .staff-profile-card h3 {
@@ -252,9 +271,10 @@
             letter-spacing: 1.5px;
             margin-bottom: 14px;
             display: inline-block;
-            background: rgba(14, 165, 233, 0.1);
-            padding: 4px 12px;
+            background: rgba(14, 165, 233, 0.12);
+            padding: 5px 14px;
             border-radius: 20px;
+            border: 1px solid rgba(14, 165, 233, 0.2);
         }
 
         .staff-contacts-info {
@@ -277,21 +297,23 @@
         .chart-box-wrapper {
             position: relative;
             width: 100%;
-            height: 350px;
-            background-color: var(--bg-secondary);
-            padding: 15px;
-            border-radius: 14px;
+            height: 380px;
+            background: linear-gradient(135deg, #090f1d 0%, #050914 100%);
+            padding: 20px;
+            border-radius: 16px;
             border: 1px solid var(--border-primary);
             margin-top: 15px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
 
         .table-box-wrapper {
             width: 100%;
             overflow-x: auto;
             margin-top: 20px;
-            border-radius: 14px;
+            border-radius: 16px;
             border: 1px solid var(--border-primary);
             background-color: var(--bg-secondary);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
         }
 
         .analytics-table {
@@ -303,13 +325,13 @@
         }
 
         .analytics-table th, .analytics-table td {
-            padding: 14px 18px;
+            padding: 16px 20px;
             border-bottom: 1px solid var(--border-primary);
             color: #f8fafc !important;
         }
 
         .analytics-table th {
-            background-color: #151d30 !important;
+            background-color: #111b33 !important;
             color: var(--accent-blue) !important;
             font-weight: 600;
             text-transform: uppercase;
@@ -318,27 +340,27 @@
         }
 
         .analytics-table tbody tr {
-            background-color: #0b101d !important;
+            background-color: #080d1a !important;
         }
 
         .analytics-table tr:nth-child(even) {
-            background-color: #0f1626 !important;
+            background-color: #0b1222 !important;
         }
 
         .analytics-table tr:hover {
-            background-color: rgba(14, 165, 233, 0.1) !important;
+            background-color: rgba(14, 165, 233, 0.12) !important;
         }
 
-        .status-up { color: var(--success-color); font-weight: bold; }
-        .status-stable { color: var(--accent-blue); font-weight: bold; }
+        .status-up { color: var(--success-color); font-weight: bold; text-shadow: 0 0 8px rgba(34,197,94,0.3); }
+        .status-stable { color: var(--accent-blue); font-weight: bold; text-shadow: 0 0 8px rgba(14,165,233,0.3); }
 
         .event-detailed-card {
-            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(15, 23, 42, 0.95));
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(13, 21, 39, 0.95));
             border: 1px solid var(--accent-blue);
-            border-radius: 14px;
-            padding: 25px;
+            border-radius: 16px;
+            padding: 28px;
             margin-top: 25px;
-            box-shadow: 0 0 25px var(--accent-glow);
+            box-shadow: 0 0 30px var(--accent-glow);
         }
 
         .event-detailed-card h3 {
@@ -389,26 +411,26 @@
         }
 
         .schedule-badge {
-            background: #151d30;
+            background: #111b33;
             border: 1px solid var(--accent-blue);
             color: #ffffff;
             padding: 10px 18px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-weight: bold;
             font-size: 1rem;
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.25);
             display: flex;
             align-items: center;
             gap: 6px;
         }
 
         .owner-news-branch {
-            background: linear-gradient(135deg, #111827 0%, #0d1527 100%);
+            background: linear-gradient(135deg, #0d1527 0%, #090e1c 100%);
             border: 1px dashed var(--accent-blue);
-            border-radius: 16px;
-            padding: 25px;
+            border-radius: 18px;
+            padding: 28px;
             margin-top: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         .owner-news-branch h3 {
@@ -430,12 +452,13 @@
         .portal-footer {
             text-align: center;
             padding: 25px 20px;
-            background-color: var(--bg-card);
+            background: linear-gradient(135deg, #0d1527 0%, #080d1a 100%);
             border: 1px solid var(--border-primary);
-            border-radius: 16px;
+            border-radius: 18px;
             color: var(--text-muted);
             font-size: 0.9rem;
             margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
     </style>
 </head>
@@ -582,6 +605,13 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td><strong>4 липня – 3 серпня 2026</strong></td>
+                            <td><span class="status-up">573 справи</span></td>
+                            <td>9 інцидентів (Пункт 16)</td>
+                            <td><span class="status-up">⚡ Штатний режим</span></td>
+                            <td>Оброблено 161 звіт (502 години роботи).</td>
+                        </tr>
+                        <tr>
                             <td><strong>Червень – Липень 2026</strong></td>
                             <td><span class="status-up">570 справ</span></td>
                             <td>38 інцидентів</td>
@@ -658,17 +688,19 @@
         const courtStockChart = new Chart(chartCanvasContext, {
             type: 'line',
             data: {
-                labels: ['Вер-Жов 2025', 'Гру-Січ 2025/26', 'Січ-Лют 2026', 'Бер-Квіт 2026', 'Трав-Черв 2026', 'Черв-Лип 2026'],
+                labels: ['Вер-Жов 2025', 'Гру-Січ 2025/26', 'Січ-Лют 2026', 'Бер-Квіт 2026', 'Трав-Черв 2026', 'Черв-Лип 2026', 'Лип-Серп 2026'],
                 datasets: [{
                     label: 'Кількість судових справ',
-                    data: [359, 657, 329, 215, 310, 570],
+                    data: [359, 657, 329, 215, 310, 570, 573],
                     borderColor: '#0ea5e9',
-                    backgroundColor: 'rgba(14, 165, 233, 0.15)',
+                    backgroundColor: 'rgba(14, 165, 233, 0.2)',
                     borderWidth: 3,
                     fill: true,
                     tension: 0.35,
-                    pointRadius: 5,
-                    pointBackgroundColor: '#0ea5e9'
+                    pointRadius: 6,
+                    pointBackgroundColor: '#38bdf8',
+                    pointBorderColor: '#ffffff',
+                    pointBorderWidth: 2
                 }]
             },
             options: {
@@ -676,16 +708,16 @@
                 maintainAspectRatio: false,
                 plugins: {
                     legend: {
-                        labels: { color: '#ffffff', font: { family: 'Segoe UI' } }
+                        labels: { color: '#ffffff', font: { family: 'Segoe UI', size: 13 } }
                     }
                 },
                 scales: {
                     x: {
-                        grid: { color: 'rgba(31, 41, 61, 0.4)' },
+                        grid: { color: 'rgba(30, 41, 59, 0.5)' },
                         ticks: { color: '#94a3b8' }
                     },
                     y: {
-                        grid: { color: 'rgba(31, 41, 61, 0.4)' },
+                        grid: { color: 'rgba(30, 41, 59, 0.5)' },
                         ticks: { color: '#94a3b8' }
                     }
                 }
