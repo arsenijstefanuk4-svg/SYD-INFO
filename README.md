@@ -30,12 +30,48 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: radial-gradient(circle at top center, #0f172a 0%, #030712 70%);
+            background: linear-gradient(135deg, #020617 0%, #090d1f 50%, #030712 100%);
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.7;
             padding: 25px;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
+        }
+
+        /* Динамічні світлові ефекти на фоні */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -150px;
+            left: -150px;
+            width: 450px;
+            height: 450px;
+            background: rgba(14, 165, 233, 0.12);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulseGlow 8s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -150px;
+            right: -150px;
+            width: 450px;
+            height: 450px;
+            background: rgba(129, 140, 248, 0.1);
+            filter: blur(120px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulseGlow 10s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.25); opacity: 1; }
         }
 
         .main-container {
@@ -46,8 +82,8 @@
         /* Анімації появи елементів (скрол) */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .animate-on-scroll.visible {
@@ -56,7 +92,8 @@
         }
 
         .portal-header {
-            background: linear-gradient(135deg, #090f1d 0%, #111b33 100%);
+            background: linear-gradient(135deg, rgba(9, 15, 29, 0.9) 0%, rgba(17, 27, 51, 0.9) 100%);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-primary);
             border-bottom: 4px solid var(--accent-blue);
             padding: 35px 20px;
@@ -64,6 +101,12 @@
             border-radius: 20px;
             margin-bottom: 30px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .portal-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 50px rgba(14, 165, 233, 0.2);
         }
 
         .portal-header h1 {
@@ -83,13 +126,20 @@
         }
 
         .hero-info-box {
-            background: linear-gradient(135deg, #0b1329 0%, #171c4a 100%);
+            background: linear-gradient(135deg, rgba(11, 19, 41, 0.9) 0%, rgba(23, 28, 74, 0.9) 100%);
+            backdrop-filter: blur(10px);
             border: 2px solid var(--accent-blue);
             border-radius: 22px;
             padding: 40px 30px;
             margin-bottom: 30px;
             text-align: center;
             box-shadow: 0 0 45px rgba(14, 165, 233, 0.25), inset 0 0 20px rgba(56, 189, 248, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-info-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 60px rgba(14, 165, 233, 0.35), inset 0 0 25px rgba(56, 189, 248, 0.15);
         }
 
         .hero-info-box h2 {
@@ -113,7 +163,8 @@
         }
 
         .content-section {
-            background: linear-gradient(135deg, #0d1527 0%, #080d1a 100%);
+            background: linear-gradient(135deg, rgba(13, 21, 39, 0.9) 0%, rgba(8, 13, 26, 0.9) 100%);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border-primary);
             border-radius: 20px;
             padding: 35px;
@@ -121,6 +172,11 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
             position: relative;
             overflow: hidden;
+            transition: border-color 0.4s ease;
+        }
+
+        .content-section:hover {
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
         .content-section::after {
@@ -234,7 +290,7 @@
             padding: 30px 20px;
             border-radius: 18px;
             text-align: center;
-            transition: transform var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
             box-shadow: 0 8px 25px rgba(0,0,0,0.5);
             position: relative;
             overflow: hidden;
@@ -245,24 +301,36 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 4px;
             background: var(--accent-blue);
-            box-shadow: 0 0 10px var(--accent-blue);
+            box-shadow: 0 0 15px var(--accent-blue);
+            transition: height 0.3s ease;
         }
 
         .staff-profile-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px) scale(1.02);
             border-color: var(--accent-blue);
-            box-shadow: 0 12px 35px var(--accent-glow);
+            box-shadow: 0 16px 40px var(--accent-glow);
         }
 
+        .staff-profile-card:hover::before {
+            height: 6px;
+        }
+
+        /* Покращений блок аватарів з іконками-заглушками та стильним оформленням */
         .staff-avatar-wrapper {
-            width: 85px;
-            height: 85px;
-            margin: 0 auto 15px auto;
+            width: 95px;
+            height: 95px;
+            margin: 0 auto 18px auto;
             position: relative;
             border-radius: 50%;
             padding: 3px;
             background: linear-gradient(135deg, var(--accent-blue), #818cf8);
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 0 25px var(--accent-glow);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .staff-profile-card:hover .staff-avatar-wrapper {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
         }
 
         .staff-avatar-wrapper img {
@@ -270,13 +338,24 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 2px solid var(--bg-card);
-            background-color: var(--bg-secondary);
-            transition: transform var(--transition-speed);
+            border: 3px solid var(--bg-card);
+            background-color: #0b1329;
+            display: block;
         }
 
-        .staff-profile-card:hover .staff-avatar-wrapper img {
-            transform: scale(1.05);
+        /* Красива аватарова іконка-заглушка на випадок, якщо картинка не підгрузилась */
+        .avatar-fallback {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            border: 3px solid var(--bg-card);
+            color: var(--accent-blue);
+            text-shadow: 0 0 10px var(--accent-glow);
         }
 
         .staff-profile-card h3 {
@@ -297,6 +376,12 @@
             padding: 5px 14px;
             border-radius: 20px;
             border: 1px solid rgba(14, 165, 233, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .staff-profile-card:hover .staff-role-badge {
+            background: rgba(14, 165, 233, 0.25);
+            transform: scale(1.05);
         }
 
         .staff-contacts-info {
@@ -309,6 +394,7 @@
             color: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .staff-contacts-info a:hover {
@@ -363,6 +449,7 @@
 
         .analytics-table tbody tr {
             background-color: #080d1a !important;
+            transition: background-color 0.3s ease;
         }
 
         .analytics-table tr:nth-child(even) {
@@ -370,7 +457,7 @@
         }
 
         .analytics-table tr:hover {
-            background-color: rgba(14, 165, 233, 0.12) !important;
+            background-color: rgba(14, 165, 233, 0.15) !important;
         }
 
         .status-up { color: var(--success-color); font-weight: bold; text-shadow: 0 0 8px rgba(34,197,94,0.3); }
@@ -383,6 +470,12 @@
             padding: 28px;
             margin-top: 25px;
             box-shadow: 0 0 30px var(--accent-glow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-detailed-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 40px rgba(14, 165, 233, 0.45);
         }
 
         .event-detailed-card h3 {
@@ -444,6 +537,12 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .schedule-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.5);
         }
 
         .owner-news-branch {
@@ -453,6 +552,11 @@
             padding: 28px;
             margin-top: 35px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: border-color 0.3s ease;
+        }
+
+        .owner-news-branch:hover {
+            border-color: #38bdf8;
         }
 
         .owner-news-branch h3 {
@@ -568,7 +672,7 @@
             <div class="staff-grid-container">
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="Arseniy_zabanen">
+                        <img src="https://via.placeholder.com/150" alt="Arseniy_zabanen" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '⚖️'}))">
                     </div>
                     <h3>Arseniy_zabanen</h3>
                     <div class="staff-role-badge">Головний Суддя (ГС)</div>
@@ -577,7 +681,7 @@
 
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="mummu228kuku">
+                        <img src="https://via.placeholder.com/150" alt="mummu228kuku" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '🛡️'}))">
                     </div>
                     <h3>mummu228kuku</h3>
                     <div class="staff-role-badge">Заступник</div>
@@ -586,7 +690,7 @@
 
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="svervanchick">
+                        <img src="https://via.placeholder.com/150" alt="svervanchick" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '📜'}))">
                     </div>
                     <h3>svervanchick</h3>
                     <div class="staff-role-badge">Суддя</div>
@@ -595,7 +699,7 @@
 
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="Huhaidjopy">
+                        <img src="https://via.placeholder.com/150" alt="Huhaidjopy" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '🏛️'}))">
                     </div>
                     <h3>Huhaidjopy</h3>
                     <div class="staff-role-badge">Суддя</div>
@@ -604,7 +708,7 @@
 
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="Mr_Zver3000">
+                        <img src="https://via.placeholder.com/150" alt="Mr_Zver3000" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '⚡'}))">
                     </div>
                     <h3>Mr_Zver3000</h3>
                     <div class="staff-role-badge">Суддя</div>
@@ -613,7 +717,7 @@
 
                 <div class="staff-profile-card">
                     <div class="staff-avatar-wrapper">
-                        <img src="https://via.placeholder.com/150" alt="Zaj_zuda3">
+                        <img src="https://via.placeholder.com/150" alt="Zaj_zuda3" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '💼'}))">
                     </div>
                     <h3>Zaj_zuda3</h3>
                     <div class="staff-role-badge">Адвокат</div>
@@ -720,7 +824,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             const observerOptions = {
-                threshold: 0.15
+                threshold: 0.12
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
