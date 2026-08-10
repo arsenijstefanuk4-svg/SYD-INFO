@@ -315,7 +315,6 @@
             height: 6px;
         }
 
-        /* Покращений блок аватарів з іконками-заглушками та стильним оформленням */
         .staff-avatar-wrapper {
             width: 95px;
             height: 95px;
@@ -343,7 +342,6 @@
             display: block;
         }
 
-        /* Красива аватарова іконка-заглушка на випадок, якщо картинка не підгрузилась */
         .avatar-fallback {
             width: 100%;
             height: 100%;
@@ -723,6 +721,24 @@
                     <div class="staff-role-badge">Адвокат</div>
                     <div class="staff-contacts-info">Roblox: Zaj_zuda3<br>TG: <a href="https://t.me/Dz7xj" target="_blank">@Dz7xj</a></div>
                 </div>
+
+                <div class="staff-profile-card">
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="heehrhrhl18" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '🔍'}))">
+                    </div>
+                    <h3>heehrhrhl18</h3>
+                    <div class="staff-role-badge">Стажер-суддя</div>
+                    <div class="staff-contacts-info">Roblox: heehrhrhl18<br>TG: <a href="https://t.me/hehr18_UR" target="_blank">@hehr18_UR</a></div>
+                </div>
+
+                <div class="staff-profile-card">
+                    <div class="staff-avatar-wrapper">
+                        <img src="https://via.placeholder.com/150" alt="Itz_raose" onerror="this.replaceWith(Object.assign(document.createElement('div'), {className: 'avatar-fallback', innerText: '🔍'}))">
+                    </div>
+                    <h3>Itz_raose</h3>
+                    <div class="staff-role-badge">Стажер-суддя</div>
+                    <div class="staff-contacts-info">Roblox: Itz_raose<br>TG: <a href="https://t.me/ob1zyan" target="_blank">@ob1zyan</a></div>
+                </div>
             </div>
         </section>
 
@@ -809,78 +825,7 @@
         <footer class="portal-footer animate-on-scroll">
             <p>&copy; 2026 Офіційний Портал Судової Системи Ukraine RP. Усі права захищені.</p>
         </footer>
-
     </div>
 
-    <script>
-        document.querySelectorAll('.dropdown-toggle-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const panel = this.nextElementSibling;
-                panel.classList.toggle('expanded');
-                const arrowIndicator = this.querySelector('span:last-child');
-                arrowIndicator.textContent = panel.classList.contains('expanded') ? '▲' : '▼';
-            });
-        });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                threshold: 0.12
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.content-section, .hero-info-box, .portal-header, .portal-footer').forEach(section => {
-                section.classList.add('animate-on-scroll');
-                observer.observe(section);
-            });
-        });
-
-        const chartCanvasContext = document.getElementById('courtStockChart').getContext('2d');
-        const courtStockChart = new Chart(chartCanvasContext, {
-            type: 'line',
-            data: {
-                labels: ['Вер-Жов 2025', 'Гру-Січ 2025/26', 'Січ-Лют 2026', 'Бер-Квіт 2026', 'Трав-Черв 2026', 'Черв-Лип 2026', 'Лип-Серп 2026'],
-                datasets: [{
-                    label: 'Кількість судових справ',
-                    data: [359, 657, 329, 215, 310, 570, 573],
-                    borderColor: '#0ea5e9',
-                    backgroundColor: 'rgba(14, 165, 233, 0.2)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.35,
-                    pointRadius: 6,
-                    pointBackgroundColor: '#38bdf8',
-                    pointBorderColor: '#ffffff',
-                    pointBorderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: { color: '#ffffff', font: { family: 'Segoe UI', size: 13 } }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(30, 41, 59, 0.5)' },
-                        ticks: { color: '#94a3b8' }
-                    },
-                    y: {
-                        grid: { color: 'rgba(30, 41, 59, 0.5)' },
-                        ticks: { color: '#94a3b8' }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
